@@ -7,13 +7,15 @@
 
 #include "CSquare.h"
 
-class Station {
+class Station : public CSquare{
 private:
     const float stationCost = 200.00;
     const float ticketPrice = 10.00;
 
 public:
     Station();
+
+    Station(int squareType, const string &squareName);
 
     float getStationCost() const;
 

@@ -16,4 +16,8 @@ float Station::getTicketPrice() const {
     return ticketPrice;
 }
 
+Station::Station(int squareType, const string &squareName) : CSquare(squareType, squareName) {
+
+}
+
 

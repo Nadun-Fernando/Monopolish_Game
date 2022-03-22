@@ -77,7 +77,9 @@ void FileOperations::readMonopolyData() {
                        mySquare.push_back(new Properties(stoi(getLine(line)[0]),getLine(line)[1],stof(getLine(line)[2]),stof(getLine(line)[3]),
                                                         stoi(getLine(line)[4])));
                        break;
-                   } else {
+                   } else if (getLine(line)[0][0] == '3') {
+                       mySquare.push_back(new Station(stoi(getLine(line)[0]), getLine(line)[1]));
+                   }else {
                        mySquare.push_back(new CSquare(stoi(getLine(line)[0]),getLine(line)[1]));
                        break;
                    }

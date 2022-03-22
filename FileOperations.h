@@ -11,6 +11,7 @@
 
 #include "CSquare.h"
 #include "Properties.h"
+#include "Station.h"
 
 using namespace std;
 
