@@ -65,7 +65,7 @@ int main(int argc, char ** argv) {
                     squareName = fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getSquareName();
                     userInterface->setPassesGo(false);
                 } else if (25 < (playerOne->getPlayerPosition() + userInterface->getRandomNumber())) {
-                    playerOne->setPlayerPosition((playerOne->getPlayerPosition() + userInterface->getRandomNumber()) - 26);
+                    playerOne->setPlayerPosition((playerOne->getPlayerPosition() + userInterface->getRandomNumber()) - 25);
                     squareName = fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getSquareName();
                     playerOne->setPlayerMoney(playerOne->getPlayerMoney() + 200);
                     userInterface->setPassesGo(true);
@@ -74,33 +74,52 @@ int main(int argc, char ** argv) {
                 userInterface->displayMove(userInterface->getRandomNumber(),playerOne->getPlayerName(),rightTrim(squareName),userInterface->isPassesGo());
 
                 if (rightTrim(squareName) == "Go to Jail") {
-
-                    playerOne->setPlayerPosition(fileOperations->findPosition("Go to Jail"));
+                    ///need to change and deal with their clz
+                    playerOne->setPlayerPosition(fileOperations->findPosition(rightTrim(squareName)));
                     playerOne->setPlayerMoney(playerOne->getPlayerMoney() - 50);
                     //cout << "\n\n+++++TEST++++++" << fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getSquareName();;
 
                 }
 
-                if (fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getSquareType() == 1) {
-                    if (fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getPropertyOwner().empty() && playerOne->getPlayerMoney() > 0) {
+                if (fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getSquareType() == 1 ||
+                    fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getSquareType() == 3 ) {
+
+                    if (fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getPropertyOwner().empty() &&
+                        playerOne->getPlayerMoney() > 0) {
+
                         cost = fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getPropertyCost();
+
                         caseValue = 'A';
-                        fileOperations->getMySquare()[playerOne->getPlayerPosition()]->setPropertyOwner(playerOne->getPlayerName());
+
+                        fileOperations->getMySquare()[playerOne->getPlayerPosition()]->setPropertyOwner(
+                                playerOne->getPlayerName());
+
                         playerOne->setPlayerMoney(playerOne->getPlayerMoney() - cost);
+
                         //userInterface->displayPropertyTransactions(playerOne->getPlayerName(),squareName,cost,false);
-                    } else if (fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getPropertyOwner() == playerOne->getPlayerName()) {
+                    } else if (fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getPropertyOwner() ==
+                               playerOne->getPlayerName()) {
+
                         cost = 0;
                         caseValue = 0;
+
                     } else {
+
                         cost = fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getPropertyRent();
-                        caseValue = 'B';
+
+                        if (fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getSquareType() == 1) {
+                            caseValue = 'B';
+                        } else if (fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getSquareType() == 3){
+                            caseValue = 'C';
+                        }
+
                         playerOne->setPlayerMoney(playerOne->getPlayerMoney() - cost);
-                        if (playerTwo->getPlayerName() == fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getPropertyOwner()) {
+
+                        if (playerTwo->getPlayerName() ==
+                            fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getPropertyOwner()) {
                             playerTwo->setPlayerMoney(playerTwo->getPlayerMoney() + cost);
                         }
                     }
-                } else if (fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getSquareType() == 3) {
-                    ///edited on 22.03
                 }
 
                 userInterface->displayPropertyTransactions(playerOne->getPlayerName(),squareName,cost,caseValue);
@@ -122,7 +141,7 @@ int main(int argc, char ** argv) {
                     squareName = fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getSquareName();
                     userInterface->setPassesGo(false);
                 } else if (25 < (playerTwo->getPlayerPosition() + userInterface->getRandomNumber())) {
-                    playerTwo->setPlayerPosition((playerTwo->getPlayerPosition() + userInterface->getRandomNumber()) - 26);
+                    playerTwo->setPlayerPosition((playerTwo->getPlayerPosition() + userInterface->getRandomNumber()) - 25);
                     squareName = fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getSquareName();
                     playerTwo->setPlayerMoney(playerTwo->getPlayerMoney() + 200);
                     userInterface->setPassesGo(true);
@@ -132,33 +151,49 @@ int main(int argc, char ** argv) {
 
                 if (rightTrim(squareName) == "Go to Jail") {
 
-                    playerOne->setPlayerPosition(fileOperations->findPosition("Go to Jail"));
-                    playerOne->setPlayerMoney(playerOne->getPlayerMoney() - 50);
+                    ///need to change position error deal with clz it will be solved.. remove find on map fuction
+
+                    playerTwo->setPlayerPosition(fileOperations->findPosition(rightTrim(squareName)));
+                    playerTwo->setPlayerMoney(playerTwo->getPlayerMoney() - 50);
                     //cout << "\n\n+++++TEST++++++" << fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getSquareName();;
 
                 }
 
-                if (fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getSquareType() == 1) {
-                    if (fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getPropertyOwner().empty() && playerTwo->getPlayerMoney() > 0) {
+                if (fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getSquareType() == 1 ||
+                    fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getSquareType() == 3) {
+
+                    if (fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getPropertyOwner().empty() &&
+                        playerTwo->getPlayerMoney() > 0) {
+
                         cost = fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getPropertyCost();
                         caseValue = 'A';
-                        fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->setPropertyOwner(playerTwo->getPlayerName());
+                        fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->setPropertyOwner(
+                                playerTwo->getPlayerName());
                         playerTwo->setPlayerMoney(playerTwo->getPlayerMoney() - cost);
                         //userInterface->displayPropertyTransactions(playerOne->getPlayerName(),squareName,cost,false);
-                    } else if (fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getPropertyOwner() == playerTwo->getPlayerName()) {
+
+                    } else if (fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getPropertyOwner() ==
+                               playerTwo->getPlayerName()) {
+
                         cost = 0;
                         caseValue = 0;
+
                     } else {
                         cost = fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getPropertyRent();
-                        caseValue = 'B';
+
+                        if (fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getSquareType() == 1) {
+                            caseValue = 'B';
+                        } else if (fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getSquareType() == 3) {
+                            caseValue = 'C';
+                        }
+
                         playerTwo->setPlayerMoney(playerTwo->getPlayerMoney() - cost);
-                        if (playerOne->getPlayerName() == fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getPropertyOwner()) {
+
+                        if (playerOne->getPlayerName() ==
+                            fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getPropertyOwner()) {
                             playerOne->setPlayerMoney(playerOne->getPlayerMoney() + cost);
                         }
                     }
-                } else if (fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getSquareType() == 3) {
-                    ///edited on 22.03
-
                 }
 
                 userInterface->displayPropertyTransactions(playerTwo->getPlayerName(),squareName,cost,caseValue);

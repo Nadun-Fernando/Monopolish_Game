@@ -20,4 +20,20 @@ Station::Station(int squareType, const string &squareName) : CSquare(squareType,
 
 }
 
+float Station::getPropertyCost() const {
+    return stationCost;
+}
+
+float Station::getPropertyRent() const {
+    return ticketPrice;
+}
+
+string Station::getPropertyOwner() const {
+    return propertyOwner;
+}
+
+void Station::setPropertyOwner(const string propertyOwner) {
+    this->propertyOwner = propertyOwner;
+}
+
 

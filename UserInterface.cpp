@@ -79,6 +79,8 @@ void UserInterface::displayRandomNumber() {
 }
 
 void UserInterface::displayMove(int randomNumber, const string& playerName, const string& squareName, bool passesGO) {
+    cout << "\n" + playerName + " rolls " + to_string(randomNumber);
+
     if (squareName == "Jail") {
 
         cout << "\n" + playerName + " lands on " + squareName;
@@ -96,16 +98,11 @@ void UserInterface::displayMove(int randomNumber, const string& playerName, cons
         cout << "\n" + playerName + " is resting";
 
     } else {
-        cout << "\n" + playerName + " rolls " + to_string(randomNumber);
         cout << "\n" + playerName + " lands on " + squareName;
     }
 
     if (passesGO) {
         cout << "\n" + playerName + " passes GO and collects "+ pound +"200.00" << endl;
-    }
-
-    if (squareName == "Railway Station" || squareName == "Bus Station") {
-        cout << "\n" + playerName + " pays " + pound  + "10 for ticket.";
     }
 //    for (const auto& keyval : positionMap) // Look at each key-value pair
 //    {
@@ -178,6 +175,9 @@ void UserInterface::displayPropertyTransactions(const string &playerName, const 
             break;
         case 'B' :
             cout <<"\n" + playerName +" pays rent for " + squareName + " : " + pound << fixed << setprecision(2) << cost << endl;
+            break;
+        case 'C':
+            cout <<"\n" + playerName +" pays " + pound + "10 for the ticket." << endl;
             break;
         default:
             break;

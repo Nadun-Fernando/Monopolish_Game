@@ -115,7 +115,11 @@ int FileOperations::findPosition(string squareName) {
 
     it = position.find(squareName);
 
-    return it->second;
+    if (it != position.end())  {
+        return it->second;
+    } else {
+        return 0;
+    }
 
 }
 
