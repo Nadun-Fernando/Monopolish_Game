@@ -3,6 +3,7 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#include <algorithm>
 #include <Windows.h>
 #include <cstdlib>
 #include <cstdio>
@@ -14,10 +15,14 @@
 #include "Properties.h"
 #include "UserInterface.h"
 #include "Player.h"
+#include "Station.h"
+
 using namespace std;
 
 
-
+string rightTrim(string word) {
+    return word.erase(word.find_last_not_of(" \n\r\t")+1);
+}
 
 
 int main(int argc, char ** argv) {
@@ -40,15 +45,17 @@ int main(int argc, char ** argv) {
 
     UserInterface *userInterface = new UserInterface();
 
+    Station *station = new Station();
+
     fileOperations->readMonopolyData();
     userInterface->setChance("playerOne");
-
+    srand(5);///read seed file needs to be added
     for (int i = 0; i < 20; ++i) {
         cout << "\n\n\n======================Round " + to_string(i + 1) + "==============================";
         for (int j = 0; j < 2; ++j) {
             if (userInterface->getChance() == "playerOne") {
-                float cost;
-                char caseValue;
+                float cost = 0;
+                char caseValue = 0;
 
                 cout << "\n============== Chance of the Player One ==================";
                 userInterface->setRandomNumber(userInterface->rollDice());
@@ -64,7 +71,15 @@ int main(int argc, char ** argv) {
                     userInterface->setPassesGo(true);
                 }
 
-                userInterface->displayMove(userInterface->getRandomNumber(),playerOne->getPlayerName(),squareName,userInterface->isPassesGo());
+                userInterface->displayMove(userInterface->getRandomNumber(),playerOne->getPlayerName(),rightTrim(squareName),userInterface->isPassesGo());
+
+                if (rightTrim(squareName) == "Go to Jail") {
+
+                    playerOne->setPlayerPosition(fileOperations->findPosition("Go to Jail"));
+                    playerOne->setPlayerMoney(playerOne->getPlayerMoney() - 50);
+                    //cout << "\n\n+++++TEST++++++" << fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getSquareName();;
+
+                }
 
                 if (fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getSquareType() == 1) {
                     if (fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getPropertyOwner().empty() && playerOne->getPlayerMoney() > 0) {
@@ -84,9 +99,11 @@ int main(int argc, char ** argv) {
                             playerTwo->setPlayerMoney(playerTwo->getPlayerMoney() + cost);
                         }
                     }
-
-                    userInterface->displayPropertyTransactions(playerOne->getPlayerName(),squareName,cost,caseValue);
+                } else if (fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getSquareType() == 3) {
+                    ///edited on 22.03
                 }
+
+                userInterface->displayPropertyTransactions(playerOne->getPlayerName(),squareName,cost,caseValue);
 
                 userInterface->displayPlayerAmount(playerOne->getPlayerName(),playerOne->getPlayerMoney());
 
@@ -94,8 +111,8 @@ int main(int argc, char ** argv) {
                 cout << "\n============== End of the Chance of the Player One =================="  << endl;
 
             } else if (userInterface->getChance() == "playerTwo") {
-                float cost;
-                char caseValue;
+                float cost = 0;
+                char caseValue = 0;
 
                 cout << "\n============== Chance of the Player Two ==================";
                 userInterface->setRandomNumber(userInterface->rollDice());
@@ -111,7 +128,15 @@ int main(int argc, char ** argv) {
                     userInterface->setPassesGo(true);
                 }
 
-                userInterface->displayMove(userInterface->getRandomNumber(),playerTwo->getPlayerName(),squareName,userInterface->isPassesGo());
+                userInterface->displayMove(userInterface->getRandomNumber(),playerTwo->getPlayerName(),rightTrim(squareName),userInterface->isPassesGo());
+
+                if (rightTrim(squareName) == "Go to Jail") {
+
+                    playerOne->setPlayerPosition(fileOperations->findPosition("Go to Jail"));
+                    playerOne->setPlayerMoney(playerOne->getPlayerMoney() - 50);
+                    //cout << "\n\n+++++TEST++++++" << fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getSquareName();;
+
+                }
 
                 if (fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getSquareType() == 1) {
                     if (fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getPropertyOwner().empty() && playerTwo->getPlayerMoney() > 0) {
@@ -131,9 +156,12 @@ int main(int argc, char ** argv) {
                             playerOne->setPlayerMoney(playerOne->getPlayerMoney() + cost);
                         }
                     }
+                } else if (fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getSquareType() == 3) {
+                    ///edited on 22.03
 
-                    userInterface->displayPropertyTransactions(playerTwo->getPlayerName(),squareName,cost,caseValue);
                 }
+
+                userInterface->displayPropertyTransactions(playerTwo->getPlayerName(),squareName,cost,caseValue);
 
                 userInterface->displayPlayerAmount(playerTwo->getPlayerName(),playerTwo->getPlayerMoney());
 

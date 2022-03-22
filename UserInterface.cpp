@@ -79,13 +79,34 @@ void UserInterface::displayRandomNumber() {
 }
 
 void UserInterface::displayMove(int randomNumber, const string& playerName, const string& squareName, bool passesGO) {
-    cout << "\n" + playerName + " rolls " + to_string(randomNumber);
-    cout << "\n" + playerName + " lands on " + squareName;
+    if (squareName == "Jail") {
+
+        cout << "\n" + playerName + " lands on " + squareName;
+        cout << "\n" + playerName + " is just visiting!";
+
+    } else if (squareName == "Go to Jail") {
+
+        cout << "\n" + playerName + " lands on " + squareName;
+        cout << "\n" + playerName + " goes to " + squareName;
+        cout << "\n" + playerName + " pays " + pound + "50.00";
+
+    } else if (squareName == "Free Parking") {
+
+        cout << "\n" + playerName + " lands on " + squareName;
+        cout << "\n" + playerName + " is resting";
+
+    } else {
+        cout << "\n" + playerName + " rolls " + to_string(randomNumber);
+        cout << "\n" + playerName + " lands on " + squareName;
+    }
 
     if (passesGO) {
         cout << "\n" + playerName + " passes GO and collects "+ pound +"200.00" << endl;
     }
 
+    if (squareName == "Railway Station" || squareName == "Bus Station") {
+        cout << "\n" + playerName + " pays " + pound  + "10 for ticket.";
+    }
 //    for (const auto& keyval : positionMap) // Look at each key-value pair
 //    {
 //        if (keyval.first == playerPosition) // If the value is 0...

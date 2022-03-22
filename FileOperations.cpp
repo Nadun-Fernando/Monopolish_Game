@@ -88,7 +88,7 @@ void FileOperations::readMonopolyData() {
     }
     ///added later
     for (int i = 0; i < mySquare.size(); ++i) {
-        position.insert(pair<int,string>(i,mySquare[i]->getSquareName()));
+        position.insert(pair<string,int>(mySquare[i]->getSquareName(),i));
     }
 }
 
@@ -100,12 +100,21 @@ void FileOperations::setMySquare(const vector<CSquare *> &mySquare) {
     FileOperations::mySquare = mySquare;
 }
 
-const map<int, string> &FileOperations::getPosition() const {
+const map<string, int> &FileOperations::getPosition() const {
     return position;
 }
 
-void FileOperations::setPosition(const map<int, string> &position) {
+void FileOperations::setPosition(const map<string, int> &position) {
     FileOperations::position = position;
+}
+
+int FileOperations::findPosition(string squareName) {
+    map<string, int> :: iterator it;
+
+    it = position.find(squareName);
+
+    return it->second;
+
 }
 
 

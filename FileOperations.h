@@ -20,7 +20,7 @@ private:
     ifstream myFile;
     //CSquare* mySquare[26];
     vector<CSquare *> mySquare;
-    map<int, string> position;
+    map<string, int> position;
     static bool isNumber(const string& str);
     static vector<string> getLine(string line);
 public:
@@ -32,11 +32,11 @@ public:
 
     void setMySquare(const vector<CSquare *> &mySquare);
 
-    const map<int, string> &getPosition() const;
+    const map<string, int> &getPosition() const;
 
-    void setPosition(const map<int, string> &position);
+    void setPosition(const map<string, int> &position);
 
-
+    int findPosition(string squareName);
 
 };
 

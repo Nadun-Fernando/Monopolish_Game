@@ -4,17 +4,17 @@
 	<Project>
 		<Option title="CO2402Assignment"/>
 		<Option makefile_is_custom="1"/>
-		<Option compiler="gcc"/>
+		<Option compiler="msvc8"/>
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f &quot;D:\CO2402 Advanced Programming\Assignment\CO2402Assignment\cmake-build-debug\Makefile&quot; VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;D:\CO2402 Advanced Programming\Assignment\CO2402Assignment\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;D:\CO2402 Advanced Programming\Assignment\CO2402Assignment\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;D:\CO2402 Advanced Programming\Assignment\CO2402Assignment\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="CO2402Assignment">
@@ -22,20 +22,22 @@
 				<Option working_dir="D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="gcc"/>
+				<Option compiler="msvc8"/>
 				<Compiler>
-					<Add directory="C:/Program Files/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
-					<Add directory="C:/Program Files/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="C:/Program Files/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
-					<Add directory="C:/Program Files/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
-					<Add directory="C:/Program Files/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
-					<Add directory="C:/Program Files/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\ATLMFC\include"/>
+					<Add directory="D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.19041.0\ucrt"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.19041.0\shared"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.19041.0\um"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.19041.0\winrt"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.19041.0\cppwinrt"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 CO2402Assignment"/>
-					<CompileFile command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f &quot;D:\CO2402 Advanced Programming\Assignment\CO2402Assignment\cmake-build-debug\Makefile&quot; VERBOSE=1 CO2402Assignment"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;D:\CO2402 Advanced Programming\Assignment\CO2402Assignment\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;D:\CO2402 Advanced Programming\Assignment\CO2402Assignment\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;D:\CO2402 Advanced Programming\Assignment\CO2402Assignment\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="CO2402Assignment/fast">
@@ -43,40 +45,42 @@
 				<Option working_dir="D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="gcc"/>
+				<Option compiler="msvc8"/>
 				<Compiler>
-					<Add directory="C:/Program Files/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
-					<Add directory="C:/Program Files/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="C:/Program Files/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
-					<Add directory="C:/Program Files/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
-					<Add directory="C:/Program Files/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
-					<Add directory="C:/Program Files/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\ATLMFC\include"/>
+					<Add directory="D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.19041.0\ucrt"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.19041.0\shared"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.19041.0\um"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.19041.0\winrt"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.19041.0\cppwinrt"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 CO2402Assignment/fast"/>
-					<CompileFile command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f &quot;D:\CO2402 Advanced Programming\Assignment\CO2402Assignment\cmake-build-debug\Makefile&quot; VERBOSE=1 CO2402Assignment/fast"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;D:\CO2402 Advanced Programming\Assignment\CO2402Assignment\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;D:\CO2402 Advanced Programming\Assignment\CO2402Assignment\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;D:\CO2402 Advanced Programming\Assignment\CO2402Assignment\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
 				<Option working_dir="D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f &quot;D:\CO2402 Advanced Programming\Assignment\CO2402Assignment\cmake-build-debug\Makefile&quot; VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;D:\CO2402 Advanced Programming\Assignment\CO2402Assignment\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;D:\CO2402 Advanced Programming\Assignment\CO2402Assignment\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;D:\CO2402 Advanced Programming\Assignment\CO2402Assignment\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
 				<Option working_dir="D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f &quot;D:\CO2402 Advanced Programming\Assignment\CO2402Assignment\cmake-build-debug\Makefile&quot; VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;D:\CO2402 Advanced Programming\Assignment\CO2402Assignment\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;D:\CO2402 Advanced Programming\Assignment\CO2402Assignment\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;D:\CO2402 Advanced Programming\Assignment\CO2402Assignment\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
@@ -92,6 +96,24 @@
 		<Unit filename="D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/FileOperations.h">
 			<Option target="CO2402Assignment"/>
 		</Unit>
+		<Unit filename="D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/FreeParking.cpp">
+			<Option target="CO2402Assignment"/>
+		</Unit>
+		<Unit filename="D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/FreeParking.h">
+			<Option target="CO2402Assignment"/>
+		</Unit>
+		<Unit filename="D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/GotoJailSquare.cpp">
+			<Option target="CO2402Assignment"/>
+		</Unit>
+		<Unit filename="D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/GotoJailSquare.h">
+			<Option target="CO2402Assignment"/>
+		</Unit>
+		<Unit filename="D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/JailSquare.cpp">
+			<Option target="CO2402Assignment"/>
+		</Unit>
+		<Unit filename="D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/JailSquare.h">
+			<Option target="CO2402Assignment"/>
+		</Unit>
 		<Unit filename="D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/Player.cpp">
 			<Option target="CO2402Assignment"/>
 		</Unit>
@@ -102,6 +124,12 @@
 			<Option target="CO2402Assignment"/>
 		</Unit>
 		<Unit filename="D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/Properties.h">
+			<Option target="CO2402Assignment"/>
+		</Unit>
+		<Unit filename="D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/Station.cpp">
+			<Option target="CO2402Assignment"/>
+		</Unit>
+		<Unit filename="D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/Station.h">
 			<Option target="CO2402Assignment"/>
 		</Unit>
 		<Unit filename="D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/UserInterface.cpp">

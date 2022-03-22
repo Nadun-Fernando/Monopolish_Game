@@ -1,3 +1,0 @@
-"D:\Programming Softwares\CLion 2021.3.4\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\CO2402Assignment.dir/objects.a
-C:\PROGRA~1\mingw64\bin\ar.exe qc CMakeFiles\CO2402Assignment.dir/objects.a @CMakeFiles\CO2402Assignment.dir\objects1.rsp
-C:\PROGRA~1\mingw64\bin\G__~1.EXE -g -Wl,--whole-archive CMakeFiles\CO2402Assignment.dir/objects.a -Wl,--no-whole-archive -o CO2402Assignment.exe -Wl,--out-implib,libCO2402Assignment.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\CO2402Assignment.dir\linklibs.rsp
