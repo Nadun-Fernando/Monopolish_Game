@@ -113,13 +113,12 @@ void FileOperations::setPosition(const map<string, int> &position) {
 int FileOperations::findPosition(string squareName) {
     map<string, int> :: iterator it;
 
-    it = position.find(squareName);
-
-    if (it != position.end())  {
-        return it->second;
-    } else {
-        return 0;
+    for (it = position.begin(); it != position.end(); it++) {
+        if (it->first == squareName) {
+            return it->second;
+        }
     }
+    return 0;
 
 }
 

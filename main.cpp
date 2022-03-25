@@ -74,11 +74,8 @@ int main(int argc, char ** argv) {
                 userInterface->displayMove(userInterface->getRandomNumber(),playerOne->getPlayerName(),rightTrim(squareName),userInterface->isPassesGo());
 
                 if (rightTrim(squareName) == "Go to Jail") {
-                    ///need to change and deal with their clz
-                    playerOne->setPlayerPosition(fileOperations->findPosition(rightTrim(squareName)));
+                    playerOne->setPlayerPosition(fileOperations->findPosition("Jail "));
                     playerOne->setPlayerMoney(playerOne->getPlayerMoney() - 50);
-                    //cout << "\n\n+++++TEST++++++" << fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getSquareName();;
-
                 }
 
                 if (fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getSquareType() == 1 ||
@@ -103,7 +100,8 @@ int main(int argc, char ** argv) {
                         cost = 0;
                         caseValue = 0;
 
-                    } else {
+                    } else if (playerTwo->getPlayerName() ==
+                               fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getPropertyOwner()){
 
                         cost = fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getPropertyRent();
 
@@ -115,10 +113,9 @@ int main(int argc, char ** argv) {
 
                         playerOne->setPlayerMoney(playerOne->getPlayerMoney() - cost);
 
-                        if (playerTwo->getPlayerName() ==
-                            fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getPropertyOwner()) {
-                            playerTwo->setPlayerMoney(playerTwo->getPlayerMoney() + cost);
-                        }
+
+                        playerTwo->setPlayerMoney(playerTwo->getPlayerMoney() + cost);
+
                     }
                 }
 
@@ -150,12 +147,8 @@ int main(int argc, char ** argv) {
                 userInterface->displayMove(userInterface->getRandomNumber(),playerTwo->getPlayerName(),rightTrim(squareName),userInterface->isPassesGo());
 
                 if (rightTrim(squareName) == "Go to Jail") {
-
-                    ///need to change position error deal with clz it will be solved.. remove find on map fuction
-
-                    playerTwo->setPlayerPosition(fileOperations->findPosition(rightTrim(squareName)));
+                    playerTwo->setPlayerPosition(fileOperations->findPosition("Jail "));
                     playerTwo->setPlayerMoney(playerTwo->getPlayerMoney() - 50);
-                    //cout << "\n\n+++++TEST++++++" << fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getSquareName();;
 
                 }
 
@@ -178,7 +171,8 @@ int main(int argc, char ** argv) {
                         cost = 0;
                         caseValue = 0;
 
-                    } else {
+                    } else if (playerOne->getPlayerName() ==
+                               fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getPropertyOwner()){
                         cost = fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getPropertyRent();
 
                         if (fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getSquareType() == 1) {
@@ -189,10 +183,9 @@ int main(int argc, char ** argv) {
 
                         playerTwo->setPlayerMoney(playerTwo->getPlayerMoney() - cost);
 
-                        if (playerOne->getPlayerName() ==
-                            fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getPropertyOwner()) {
-                            playerOne->setPlayerMoney(playerOne->getPlayerMoney() + cost);
-                        }
+
+                        playerOne->setPlayerMoney(playerOne->getPlayerMoney() + cost);
+
                     }
                 }
 
