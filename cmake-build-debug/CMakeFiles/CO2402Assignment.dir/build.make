@@ -258,6 +258,46 @@ CMakeFiles\CO2402Assignment.dir\Station.cpp.s: cmake_force
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CO2402Assignment.dir\Station.cpp.s /c "D:\CO2402 Advanced Programming\Assignment\CO2402Assignment\Station.cpp"
 <<
 
+CMakeFiles\CO2402Assignment.dir\BonusSquare.cpp.obj: CMakeFiles\CO2402Assignment.dir\flags.make
+CMakeFiles\CO2402Assignment.dir\BonusSquare.cpp.obj: ..\BonusSquare.cpp
+CMakeFiles\CO2402Assignment.dir\BonusSquare.cpp.obj: CMakeFiles\CO2402Assignment.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\CO2402 Advanced Programming\Assignment\CO2402Assignment\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/CO2402Assignment.dir/BonusSquare.cpp.obj"
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\CO2402Assignment.dir\BonusSquare.cpp.obj.d --working-dir="D:\CO2402 Advanced Programming\Assignment\CO2402Assignment\cmake-build-debug" --filter-prefix="Note: including file: " -- "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\bin\Hostx86\x86\cl.exe" @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\CO2402Assignment.dir\BonusSquare.cpp.obj /FdCMakeFiles\CO2402Assignment.dir\ /FS -c "D:\CO2402 Advanced Programming\Assignment\CO2402Assignment\BonusSquare.cpp"
+<<
+
+CMakeFiles\CO2402Assignment.dir\BonusSquare.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CO2402Assignment.dir/BonusSquare.cpp.i"
+	"D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\bin\Hostx86\x86\cl.exe" > CMakeFiles\CO2402Assignment.dir\BonusSquare.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\CO2402 Advanced Programming\Assignment\CO2402Assignment\BonusSquare.cpp"
+<<
+
+CMakeFiles\CO2402Assignment.dir\BonusSquare.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CO2402Assignment.dir/BonusSquare.cpp.s"
+	"D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\bin\Hostx86\x86\cl.exe" @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CO2402Assignment.dir\BonusSquare.cpp.s /c "D:\CO2402 Advanced Programming\Assignment\CO2402Assignment\BonusSquare.cpp"
+<<
+
+CMakeFiles\CO2402Assignment.dir\PenaltySquare.cpp.obj: CMakeFiles\CO2402Assignment.dir\flags.make
+CMakeFiles\CO2402Assignment.dir\PenaltySquare.cpp.obj: ..\PenaltySquare.cpp
+CMakeFiles\CO2402Assignment.dir\PenaltySquare.cpp.obj: CMakeFiles\CO2402Assignment.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\CO2402 Advanced Programming\Assignment\CO2402Assignment\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/CO2402Assignment.dir/PenaltySquare.cpp.obj"
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\CO2402Assignment.dir\PenaltySquare.cpp.obj.d --working-dir="D:\CO2402 Advanced Programming\Assignment\CO2402Assignment\cmake-build-debug" --filter-prefix="Note: including file: " -- "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\bin\Hostx86\x86\cl.exe" @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\CO2402Assignment.dir\PenaltySquare.cpp.obj /FdCMakeFiles\CO2402Assignment.dir\ /FS -c "D:\CO2402 Advanced Programming\Assignment\CO2402Assignment\PenaltySquare.cpp"
+<<
+
+CMakeFiles\CO2402Assignment.dir\PenaltySquare.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CO2402Assignment.dir/PenaltySquare.cpp.i"
+	"D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\bin\Hostx86\x86\cl.exe" > CMakeFiles\CO2402Assignment.dir\PenaltySquare.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\CO2402 Advanced Programming\Assignment\CO2402Assignment\PenaltySquare.cpp"
+<<
+
+CMakeFiles\CO2402Assignment.dir\PenaltySquare.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CO2402Assignment.dir/PenaltySquare.cpp.s"
+	"D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\bin\Hostx86\x86\cl.exe" @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CO2402Assignment.dir\PenaltySquare.cpp.s /c "D:\CO2402 Advanced Programming\Assignment\CO2402Assignment\PenaltySquare.cpp"
+<<
+
 # Object files for target CO2402Assignment
 CO2402Assignment_OBJECTS = \
 "CMakeFiles\CO2402Assignment.dir\main.cpp.obj" \
@@ -269,7 +309,9 @@ CO2402Assignment_OBJECTS = \
 "CMakeFiles\CO2402Assignment.dir\JailSquare.cpp.obj" \
 "CMakeFiles\CO2402Assignment.dir\GotoJailSquare.cpp.obj" \
 "CMakeFiles\CO2402Assignment.dir\FreeParking.cpp.obj" \
-"CMakeFiles\CO2402Assignment.dir\Station.cpp.obj"
+"CMakeFiles\CO2402Assignment.dir\Station.cpp.obj" \
+"CMakeFiles\CO2402Assignment.dir\BonusSquare.cpp.obj" \
+"CMakeFiles\CO2402Assignment.dir\PenaltySquare.cpp.obj"
 
 # External object files for target CO2402Assignment
 CO2402Assignment_EXTERNAL_OBJECTS =
@@ -284,9 +326,11 @@ CO2402Assignment.exe: CMakeFiles\CO2402Assignment.dir\JailSquare.cpp.obj
 CO2402Assignment.exe: CMakeFiles\CO2402Assignment.dir\GotoJailSquare.cpp.obj
 CO2402Assignment.exe: CMakeFiles\CO2402Assignment.dir\FreeParking.cpp.obj
 CO2402Assignment.exe: CMakeFiles\CO2402Assignment.dir\Station.cpp.obj
+CO2402Assignment.exe: CMakeFiles\CO2402Assignment.dir\BonusSquare.cpp.obj
+CO2402Assignment.exe: CMakeFiles\CO2402Assignment.dir\PenaltySquare.cpp.obj
 CO2402Assignment.exe: CMakeFiles\CO2402Assignment.dir\build.make
 CO2402Assignment.exe: CMakeFiles\CO2402Assignment.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="D:\CO2402 Advanced Programming\Assignment\CO2402Assignment\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable CO2402Assignment.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="D:\CO2402 Advanced Programming\Assignment\CO2402Assignment\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable CO2402Assignment.exe"
 	"D:\Programming Softwares\CLion 2021.3.4\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\CO2402Assignment.dir --rc="D:\Windows Kits\10\bin\10.0.19041.0\x86\rc.exe" --mt="D:\Windows Kits\10\bin\10.0.19041.0\x86\mt.exe" --manifests -- "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\bin\Hostx86\x86\link.exe" /nologo @CMakeFiles\CO2402Assignment.dir\objects1.rsp @<<
  /out:CO2402Assignment.exe /implib:CO2402Assignment.lib /pdb:"D:\CO2402 Advanced Programming\Assignment\CO2402Assignment\cmake-build-debug\CO2402Assignment.pdb" /version:0.0 /machine:X86 /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<

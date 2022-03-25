@@ -118,6 +118,30 @@ CO2402Assignment\fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CO2402Assignment.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CO2402Assignment.dir\build
 .PHONY : CO2402Assignment\fast
 
+BonusSquare.obj: BonusSquare.cpp.obj
+.PHONY : BonusSquare.obj
+
+# target to build an object file
+BonusSquare.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CO2402Assignment.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CO2402Assignment.dir\BonusSquare.cpp.obj
+.PHONY : BonusSquare.cpp.obj
+
+BonusSquare.i: BonusSquare.cpp.i
+.PHONY : BonusSquare.i
+
+# target to preprocess a source file
+BonusSquare.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CO2402Assignment.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CO2402Assignment.dir\BonusSquare.cpp.i
+.PHONY : BonusSquare.cpp.i
+
+BonusSquare.s: BonusSquare.cpp.s
+.PHONY : BonusSquare.s
+
+# target to generate assembly for a file
+BonusSquare.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CO2402Assignment.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CO2402Assignment.dir\BonusSquare.cpp.s
+.PHONY : BonusSquare.cpp.s
+
 CSquare.obj: CSquare.cpp.obj
 .PHONY : CSquare.obj
 
@@ -237,6 +261,30 @@ JailSquare.s: JailSquare.cpp.s
 JailSquare.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CO2402Assignment.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CO2402Assignment.dir\JailSquare.cpp.s
 .PHONY : JailSquare.cpp.s
+
+PenaltySquare.obj: PenaltySquare.cpp.obj
+.PHONY : PenaltySquare.obj
+
+# target to build an object file
+PenaltySquare.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CO2402Assignment.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CO2402Assignment.dir\PenaltySquare.cpp.obj
+.PHONY : PenaltySquare.cpp.obj
+
+PenaltySquare.i: PenaltySquare.cpp.i
+.PHONY : PenaltySquare.i
+
+# target to preprocess a source file
+PenaltySquare.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CO2402Assignment.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CO2402Assignment.dir\PenaltySquare.cpp.i
+.PHONY : PenaltySquare.cpp.i
+
+PenaltySquare.s: PenaltySquare.cpp.s
+.PHONY : PenaltySquare.s
+
+# target to generate assembly for a file
+PenaltySquare.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CO2402Assignment.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CO2402Assignment.dir\PenaltySquare.cpp.s
+.PHONY : PenaltySquare.cpp.s
 
 Player.obj: Player.cpp.obj
 .PHONY : Player.obj
@@ -367,6 +415,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... CO2402Assignment
+	@echo ... BonusSquare.obj
+	@echo ... BonusSquare.i
+	@echo ... BonusSquare.s
 	@echo ... CSquare.obj
 	@echo ... CSquare.i
 	@echo ... CSquare.s
@@ -382,6 +433,9 @@ help:
 	@echo ... JailSquare.obj
 	@echo ... JailSquare.i
 	@echo ... JailSquare.s
+	@echo ... PenaltySquare.obj
+	@echo ... PenaltySquare.i
+	@echo ... PenaltySquare.s
 	@echo ... Player.obj
 	@echo ... Player.i
 	@echo ... Player.s
