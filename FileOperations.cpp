@@ -4,6 +4,8 @@
 
 #include "FileOperations.h"
 #include "Properties.h"
+#include "BonusSquare.h"
+#include "PenaltySquare.h"
 #include <string>
 #include <cstring>
 #include <utility>
@@ -79,7 +81,14 @@ void FileOperations::readMonopolyData() {
                        break;
                    } else if (getLine(line)[0][0] == '3') {
                        mySquare.push_back(new Station(stoi(getLine(line)[0]), getLine(line)[1]));
-                   }else {
+                       break;
+                   } else if (getLine(line)[0][0] == '4') {
+                       mySquare.push_back(new BonusSquare(stoi(getLine(line)[0]), getLine(line)[1]));
+                       break;
+                   } else if (getLine(line)[0][0]) {
+                       mySquare.push_back(new PenaltySquare(stoi(getLine(line)[0]), getLine(line)[1]));
+                       break;
+                   } else {
                        mySquare.push_back(new CSquare(stoi(getLine(line)[0]),getLine(line)[1]));
                        break;
                    }

@@ -33,6 +33,7 @@ public:
     virtual float getPropertyRent() const;
     virtual int getColorGroup() const;
     virtual string getPropertyOwner() const;
+    virtual int getBonusMoney(int rolledNumber);
     virtual void setPropertyOwner(const string propertyOwner);
 };
 

@@ -50,6 +50,7 @@ int main(int argc, char ** argv) {
     fileOperations->readMonopolyData();
     userInterface->setChance("playerOne");
     srand(5);///read seed file needs to be added
+    //cout << fileOperations->getMySquare().size() << endl;
     for (int i = 0; i < 20; ++i) {
         cout << "\n\n\n======================Round " + to_string(i + 1) + "==============================";
         for (int j = 0; j < 2; ++j) {
@@ -71,7 +72,20 @@ int main(int argc, char ** argv) {
                     userInterface->setPassesGo(true);
                 }
 
-                userInterface->displayMove(userInterface->getRandomNumber(),playerOne->getPlayerName(),rightTrim(squareName),userInterface->isPassesGo());
+                if (rightTrim(squareName) == "Bonus") {
+                    userInterface->setRollBonusPenalty(userInterface->rollDice());
+                    playerOne->setPlayerMoney(playerOne->getPlayerMoney() + fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getBonusMoney(userInterface->getRollBonusPenalty()));
+                    userInterface->setBonus(true);
+                } else if (rightTrim(squareName) == "Penalty") {
+                    userInterface->setRollBonusPenalty(userInterface->rollDice());
+                    playerOne->setPlayerMoney(playerOne->getPlayerMoney() - fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getBonusMoney(userInterface->getRollBonusPenalty()));
+                    userInterface->setPenalty(true);
+                } else {
+                    userInterface->setBonus(false);
+                    userInterface->setPenalty(false);
+                }
+
+                userInterface->displayMove(userInterface->getRandomNumber(),playerOne->getPlayerName(),rightTrim(squareName),userInterface->isPassesGo(),userInterface->isBonus(),userInterface->isPenalty(),userInterface->getRollBonusPenalty());
 
                 if (rightTrim(squareName) == "Go to Jail") {
                     playerOne->setPlayerPosition(fileOperations->findPosition("Jail "));
@@ -143,8 +157,21 @@ int main(int argc, char ** argv) {
                     playerTwo->setPlayerMoney(playerTwo->getPlayerMoney() + 200);
                     userInterface->setPassesGo(true);
                 }
-
-                userInterface->displayMove(userInterface->getRandomNumber(),playerTwo->getPlayerName(),rightTrim(squareName),userInterface->isPassesGo());
+                
+                if (rightTrim(squareName) == "Bonus") {
+                    userInterface->setRollBonusPenalty(userInterface->rollDice());
+                    playerTwo->setPlayerMoney(playerTwo->getPlayerMoney() + fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getBonusMoney(userInterface->getRollBonusPenalty()));
+                    userInterface->setBonus(true);
+                } else if (rightTrim(squareName) == "Penalty") {
+                    userInterface->setRollBonusPenalty(userInterface->rollDice());
+                    playerTwo->setPlayerMoney(playerTwo->getPlayerMoney() - fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getBonusMoney(userInterface->getRollBonusPenalty()));
+                    userInterface->setPenalty(true);
+                } else {
+                    userInterface->setBonus(false);
+                    userInterface->setPenalty(false);
+                }
+                
+                userInterface->displayMove(userInterface->getRandomNumber(),playerTwo->getPlayerName(),rightTrim(squareName),userInterface->isPassesGo(),userInterface->isBonus(),userInterface->isPenalty(),userInterface->getRollBonusPenalty());
 
                 if (rightTrim(squareName) == "Go to Jail") {
                     playerTwo->setPlayerPosition(fileOperations->findPosition("Jail "));

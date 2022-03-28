@@ -8,13 +8,6 @@ Station::Station() {
 
 }
 
-float Station::getStationCost() const {
-    return stationCost;
-}
-
-float Station::getTicketPrice() const {
-    return ticketPrice;
-}
 
 Station::Station(int squareType, const string &squareName) : CSquare(squareType, squareName) {
 

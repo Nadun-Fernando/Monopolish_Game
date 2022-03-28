@@ -20,10 +20,6 @@ public:
 
     Station(int squareType, const string &squareName);
 
-    float getStationCost() const;
-
-    float getTicketPrice() const;
-
     float getPropertyCost() const override;
 
     float getPropertyRent() const override;

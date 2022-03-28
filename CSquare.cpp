@@ -49,6 +49,10 @@ void CSquare::setPropertyOwner(const string propertyOwner) {
 
 }
 
+int CSquare::getBonusMoney(int rolledNumber) {
+    return 0;
+}
+
 
 
 

@@ -78,7 +78,7 @@ void UserInterface::displayRandomNumber() {
 
 }
 
-void UserInterface::displayMove(int randomNumber, const string& playerName, const string& squareName, bool passesGO) {
+void UserInterface::displayMove(int randomNumber, const string& playerName, const string& squareName, bool passesGO, bool bonus, bool penalty, int rollBonusPenalty) {
     cout << "\n" + playerName + " rolls " + to_string(randomNumber);
 
     if (squareName == "Jail") {
@@ -103,6 +103,66 @@ void UserInterface::displayMove(int randomNumber, const string& playerName, cons
 
     if (passesGO) {
         cout << "\n" + playerName + " passes GO and collects "+ pound +"200.00" << endl;
+    }
+
+    if (bonus) {
+        switch (rollBonusPenalty) {
+            case 1:
+                cout << "\n" + playerName + " find some money. Gain " + pound + "20" << endl;
+                break;
+
+            case 2:
+                cout << "\n" + playerName + " win a coding competition. Gain " + pound + "50" << endl;
+                break;
+
+            case 3:
+                cout << "\n" + playerName + " receive a rent rebate. Gain " + pound + "100" << endl;
+                break;
+
+            case 4:
+                cout << "\n" + playerName + " win the lottery. Gain " + pound + "150" << endl;
+                break;
+
+            case 5:
+                cout << "\n" + playerName + " receive the bequest. Gain " + pound + "200" << endl;
+                break;
+
+            case 6:
+                cout << "\n" + playerName + " it's your birthday. Gain " + pound + "300" << endl;
+                break;
+
+            default:
+                break;
+        }
+    } else if (penalty) {
+        switch (rollBonusPenalty) {
+            case 1:
+                cout << "\n" + playerName + " buy a coffee in StarBucks. Lose " + pound + "20" << endl;
+                break;
+
+            case 2:
+                cout << "\n" + playerName + " pay your broadband bill. Lose " + pound + "50" << endl;
+                break;
+
+            case 3:
+                cout << "\n" + playerName + " visit the SU shop for food. Lose " + pound + "100" << endl;
+                break;
+
+            case 4:
+                cout << "\n" + playerName + " buy and assignment solution. Lose " + pound + "150" << endl;
+                break;
+
+            case 5:
+                cout << "\n" + playerName + " go for a romantic meal. Lose " + pound + "200" << endl;
+                break;
+
+            case 6:
+                cout << "\n" + playerName + " pay some university fees. Lose " + pound + "300" << endl;
+                break;
+
+            default:
+                break;
+        }
     }
 //    for (const auto& keyval : positionMap) // Look at each key-value pair
 //    {
@@ -192,6 +252,30 @@ void UserInterface::displayPropertyTransactions(const string &playerName, const 
 
 void UserInterface::displayPlayerAmount(const string& playerName, float playerMoney) const {
     cout << "\n\n" + playerName + " has " + pound << fixed << setprecision(2) << playerMoney;
+}
+
+bool UserInterface::isBonus() const {
+    return bonus;
+}
+
+void UserInterface::setBonus(bool bonus) {
+    UserInterface::bonus = bonus;
+}
+
+bool UserInterface::isPenalty() const {
+    return penalty;
+}
+
+void UserInterface::setPenalty(bool penalty) {
+    UserInterface::penalty = penalty;
+}
+
+int UserInterface::getRollBonusPenalty() const {
+    return rollBonusPenalty;
+}
+
+void UserInterface::setRollBonusPenalty(int rollBonusPenalty) {
+    UserInterface::rollBonusPenalty = rollBonusPenalty;
 }
 
 

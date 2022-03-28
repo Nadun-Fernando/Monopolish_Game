@@ -13,7 +13,10 @@ using namespace std;
 class UserInterface {
 private:
     int randomNumber;
+    int rollBonusPenalty;
     bool passesGO;
+    bool bonus;
+    bool penalty;
     string chance;
     const char pound = 156;
 
@@ -22,11 +25,15 @@ public:
 
     virtual ~UserInterface();
 
-    static int rollDice();
+    int rollDice();
 
     int getRandomNumber() const;
 
     void setRandomNumber(int random);
+
+    int getRollBonusPenalty() const;
+
+    void setRollBonusPenalty(int rollBonusPenalty);
 
     const string &getChance() const;
 
@@ -36,13 +43,21 @@ public:
 
     void setPassesGo(bool passesGo);
 
+    bool isBonus() const;
+
+    void setBonus(bool bonus);
+
+    bool isPenalty() const;
+
+    void setPenalty(bool penalty);
+
     static void intro();
 
     static void displayBoard();
 
     void displayRandomNumber();
 
-    void displayMove(int randomNumber,const string& playerName, const string& squareName, bool passesGO);
+    void displayMove(int randomNumber,const string& playerName, const string& squareName, bool passesGO, bool bonus, bool penalty, int rollBonusPenalty);
 
     static void thankYou();
 
