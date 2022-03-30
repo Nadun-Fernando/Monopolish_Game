@@ -55,6 +55,7 @@ int main(int argc, char ** argv) {
         cout << "\n\n\n======================Round " + to_string(i + 1) + "==============================";
         for (int j = 0; j < 2; ++j) {
             if (userInterface->getChance() == "playerOne") {
+                int colorGroup = 0;
                 float cost = 0;
                 char caseValue = 0;
 
@@ -120,6 +121,18 @@ int main(int argc, char ** argv) {
                         cost = fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getPropertyRent();
 
                         if (fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getSquareType() == 1) {
+                            colorGroup = fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getColorGroup();
+                            if (fileOperations->getMySquare()[playerOne->getPlayerPosition() + 1]->getSquareType() == 1) {
+                                if (colorGroup == fileOperations->getMySquare()[playerOne->getPlayerPosition() + 1]->getColorGroup()) {
+                                    cout << "true" << endl;
+                                    cost = cost * 2;
+                                }
+                            } else if (fileOperations->getMySquare()[playerOne->getPlayerPosition() - 1]->getSquareType() == 1) {
+                                if (colorGroup == fileOperations->getMySquare()[playerOne->getPlayerPosition() - 1]->getColorGroup()) {
+                                    cout << "true" << endl;
+                                    cost = cost * 2;
+                                }
+                            }
                             caseValue = 'B';
                         } else if (fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getSquareType() == 3){
                             caseValue = 'C';
@@ -141,6 +154,7 @@ int main(int argc, char ** argv) {
                 cout << "\n============== End of the Chance of the Player One =================="  << endl;
 
             } else if (userInterface->getChance() == "playerTwo") {
+                int colorGroup = 0;
                 float cost = 0;
                 char caseValue = 0;
 
@@ -203,6 +217,18 @@ int main(int argc, char ** argv) {
                         cost = fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getPropertyRent();
 
                         if (fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getSquareType() == 1) {
+                            colorGroup = fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getColorGroup();
+                            if (fileOperations->getMySquare()[playerTwo->getPlayerPosition() + 1]->getSquareType() == 1) {
+                                if (colorGroup == fileOperations->getMySquare()[playerTwo->getPlayerPosition() + 1]->getColorGroup()) {
+                                    cout << "true" << endl;
+                                    cost = cost * 2;
+                                }
+                            } else if (fileOperations->getMySquare()[playerTwo->getPlayerPosition() - 1]->getSquareType() == 1) {
+                                if (colorGroup == fileOperations->getMySquare()[playerTwo->getPlayerPosition() - 1]->getColorGroup()) {
+                                    cout << "true" << endl;
+                                    cost = cost * 2;
+                                }
+                            }
                             caseValue = 'B';
                         } else if (fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getSquareType() == 3) {
                             caseValue = 'C';
