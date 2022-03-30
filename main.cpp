@@ -273,6 +273,7 @@ int main(int argc, char ** argv) {
     delete playerTwo;
     delete playerOne;
     delete userInterface;
+    delete station;
     string().swap(squareName);
 
     system("pause");

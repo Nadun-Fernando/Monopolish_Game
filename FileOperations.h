@@ -26,6 +26,9 @@ private:
     static vector<string> getLine(string line);
 public:
     FileOperations();
+
+    virtual ~FileOperations();
+
     explicit FileOperations(string fileName);
     void readMonopolyData();
 

@@ -41,8 +41,10 @@ vector <string> FileOperations::getLine(string line) {
     char * line_chararr = new char[strlen(line.c_str())+1];
     strcpy(line_chararr, const_cast< char *>(line.c_str()));
 
-    char * tokens = new char[strlen(line_chararr) +1 ];
-    strcpy(tokens, strtok(line_chararr,delim));
+//    char * tokens = new char[strlen(line_chararr) +1 ];
+//    strcpy(tokens, strtok(line_chararr,delim));
+
+    char * tokens = strtok(line_chararr,delim);
 
     vector<string> vs;
 
@@ -61,9 +63,13 @@ vector <string> FileOperations::getLine(string line) {
                 vs.emplace_back(tokens);
             }
         }
-        tokens = strtok(NULL, delim);
+        tokens = strtok(nullptr, delim);
     }
     vs.push_back(temp);
+
+    delete[] line_chararr;
+    delete[] delim;
+    free(tokens);
 
     return vs;
 }
@@ -128,6 +134,13 @@ int FileOperations::findPosition(string squareName) {
         }
     }
     return 0;
+
+}
+
+FileOperations::~FileOperations() {
+    for (auto i : getMySquare()) {
+        delete i;
+    }
 
 }
 
