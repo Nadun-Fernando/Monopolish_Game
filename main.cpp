@@ -35,23 +35,25 @@ int main(int argc, char ** argv) {
 //    UserInterface ui;
 //    ui.displayBoard();
 
-    string squareName;
 
 
-    FileOperations *fileOperations = new FileOperations("../Resources/monopoly.txt");
 
-    Player *playerOne = new Player("dog", 1500,0);
-    Player *playerTwo = new Player("car",1500,0);
+    unique_ptr<FileOperations> fileOperations(make_unique<FileOperations>(("../Resources/monopoly.txt")));
 
-    UserInterface *userInterface = new UserInterface();
 
-    Station *station = new Station();
+    unique_ptr<Player> playerOne(make_unique<Player>("dog", 1500,0));
+    unique_ptr<Player> playerTwo(make_unique<Player>("car",1500,0));// new Player("car",1500,0);
+
+    unique_ptr<UserInterface> userInterface(make_unique<UserInterface>()); //new UserInterface();
+
+    unique_ptr<Station> station(make_unique<Station>());//new Station();
 
     fileOperations->readMonopolyData();
     userInterface->setChance("playerOne");
     srand(5);///read seed file needs to be added
     //cout << fileOperations->getMySquare().size() << endl;
     for (int i = 0; i < 20; ++i) {
+        string squareName;
         cout << "\n\n\n======================Round " + to_string(i + 1) + "==============================";
         for (int j = 0; j < 2; ++j) {
             if (userInterface->getChance() == "playerOne") {
@@ -295,12 +297,11 @@ int main(int argc, char ** argv) {
 //        }
 //    }
     ///before create the object needs to check whether it's a property or a normal square
-    delete fileOperations;
-    delete playerTwo;
-    delete playerOne;
-    delete userInterface;
-    delete station;
-    string().swap(squareName);
+    //delete fileOperations;
+//    delete playerTwo;
+//    delete playerOne;
+//    delete userInterface;
+//    delete station;
 
     system("pause");
 
