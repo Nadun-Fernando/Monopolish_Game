@@ -41,10 +41,13 @@ int main() {
     unique_ptr<FileOperations> fileOperations(make_unique<FileOperations>(("../Resources/monopoly.txt")));
 
 
-    unique_ptr<Player> playerOne(make_unique<Player>("dog", 1500,0));
-    unique_ptr<Player> playerTwo(make_unique<Player>("car",1500,0));// new Player("car",1500,0);
+    unique_ptr<Player> playerOne(make_unique<Player>("dog", float (1500),0));
+    unique_ptr<Player> playerTwo(make_unique<Player>("car",float
+    (1500),0));// new Player("car",1500,0);
 
     unique_ptr<UserInterface> userInterface(make_unique<UserInterface>()); //new UserInterface();
+
+
 
     unique_ptr<Station> station(make_unique<Station>());//new Station();
 

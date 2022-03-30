@@ -11,3 +11,7 @@ GotoJailSquare::GotoJailSquare() {
 GotoJailSquare::GotoJailSquare(int squareType, const string &squareName) : CSquare(squareType, squareName) {
 
 }
+
+float GotoJailSquare::getPropertyCost() const {
+    return jailPrice;
+}

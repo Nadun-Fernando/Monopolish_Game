@@ -8,10 +8,14 @@
 #include "CSquare.h"
 
 class GotoJailSquare : public CSquare{
+private:
+    const float jailPrice = 50;
 public:
     GotoJailSquare();
 
     GotoJailSquare(int squareType, const string &squareName);
+
+    float getPropertyCost() const override;
 
 };
 
