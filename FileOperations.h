@@ -15,15 +15,19 @@
 
 using namespace std;
 
+typedef vector<CSquare *> vectorSquare;
+typedef vector<string> vectorString;
+
 class FileOperations {
 private:
     string fileName;
     ifstream myFile;
     //CSquare* mySquare[26];
-    vector<CSquare *> mySquare;
+//    vector<CSquare *> mySquare;
+    vectorSquare mySquare;
     map<string, int> position;
     static bool isNumber(const string& str);
-    static vector<string> getLine(string line);
+    static vectorString getLine(string line);
 public:
     FileOperations();
 
@@ -32,9 +36,9 @@ public:
     explicit FileOperations(string fileName);
     void readMonopolyData();
 
-    const vector<CSquare *> &getMySquare() const;
+    const vectorSquare &getMySquare() const;
 
-    void setMySquare(const vector<CSquare *> &mySquare);
+    void setMySquare(const vectorSquare &mySquare);
 
     const map<string, int> &getPosition() const;
 

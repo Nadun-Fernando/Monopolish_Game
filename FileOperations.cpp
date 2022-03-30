@@ -25,7 +25,7 @@ bool FileOperations::isNumber(const string &str) {
     return true;
 }
 
-vector <string> FileOperations::getLine(string line) {
+vectorString FileOperations::getLine(string line) {
     bool isString = false;
     string temp;
 
@@ -46,7 +46,7 @@ vector <string> FileOperations::getLine(string line) {
 
     char * tokens = strtok(line_chararr,delim);
 
-    vector<string> vs;
+    vectorString vs;
 
     while (tokens != nullptr) {
         if (!isNumber(tokens)) {
@@ -109,11 +109,11 @@ void FileOperations::readMonopolyData() {
     }
 }
 
-const vector<CSquare *> &FileOperations::getMySquare() const {
+const vectorSquare &FileOperations::getMySquare() const {
     return mySquare;
 }
 
-void FileOperations::setMySquare(const vector<CSquare *> &mySquare) {
+void FileOperations::setMySquare(const vectorSquare &mySquare) {
     FileOperations::mySquare = mySquare;
 }
 
@@ -126,11 +126,16 @@ void FileOperations::setPosition(const map<string, int> &position) {
 }
 
 int FileOperations::findPosition(string squareName) {
-    map<string, int> :: iterator it;
-
-    for (it = position.begin(); it != position.end(); it++) {
-        if (it->first == squareName) {
-            return it->second;
+//    map<string, int> :: iterator it;
+//
+//    for (it = position.begin(); it != position.end(); it++) {
+//        if (it->first == squareName) {
+//            return it->second;
+//        }
+//    }
+    for (const auto& it: position) {
+        if (it.first == squareName) {
+            return it.second;
         }
     }
     return 0;

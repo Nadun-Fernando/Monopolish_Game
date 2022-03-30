@@ -25,12 +25,12 @@ string rightTrim(string word) {
 }
 
 
-int main(int argc, char ** argv) {
-    HWND console = GetConsoleWindow();
-    RECT ConsoleRect;
-    GetWindowRect(console, &ConsoleRect);
-
-    MoveWindow(console, ConsoleRect.left, ConsoleRect.top, 1980, 1080, TRUE);
+int main() {
+//    HWND console = GetConsoleWindow();
+//    RECT ConsoleRect;
+//    GetWindowRect(console, &ConsoleRect);
+//
+//    MoveWindow(console, ConsoleRect.left, ConsoleRect.top, 1980, 1080, TRUE);
 
 //    UserInterface ui;
 //    ui.displayBoard();
