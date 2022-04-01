@@ -94,8 +94,9 @@ int main() {
                 userInterface->displayMove(userInterface->getRandomNumber(),playerOne->getPlayerName(),rightTrim(squareName),userInterface->isPassesGo(),userInterface->isBonus(),userInterface->isPenalty(),userInterface->getRollBonusPenalty());
 
                 if (rightTrim(squareName) == "Go to Jail") {
+                    playerOne->setPlayerMoney(playerOne->getPlayerMoney() - fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getPropertyCost());
                     playerOne->setPlayerPosition(fileOperations->findPosition("Jail "));
-                    playerOne->setPlayerMoney(playerOne->getPlayerMoney() - 50);
+
                 }
 
                 if (fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getSquareType() == 1 ||
@@ -193,8 +194,9 @@ int main() {
                 userInterface->displayMove(userInterface->getRandomNumber(),playerTwo->getPlayerName(),rightTrim(squareName),userInterface->isPassesGo(),userInterface->isBonus(),userInterface->isPenalty(),userInterface->getRollBonusPenalty());
 
                 if (rightTrim(squareName) == "Go to Jail") {
+                    playerTwo->setPlayerMoney(playerTwo->getPlayerMoney() - fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getPropertyCost());
                     playerTwo->setPlayerPosition(fileOperations->findPosition("Jail "));
-                    playerTwo->setPlayerMoney(playerTwo->getPlayerMoney() - 50);
+
 
                 }
 

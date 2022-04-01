@@ -6,6 +6,10 @@
 #include "Properties.h"
 #include "BonusSquare.h"
 #include "PenaltySquare.h"
+#include "JailSquare.h"
+#include "GotoJailSquare.h"
+#include "FreeParking.h"
+
 #include <string>
 #include <cstring>
 #include <utility>
@@ -91,8 +95,17 @@ void FileOperations::readMonopolyData() {
                    } else if (getLine(line)[0][0] == '4') {
                        mySquare.push_back(new BonusSquare(stoi(getLine(line)[0]), getLine(line)[1]));
                        break;
-                   } else if (getLine(line)[0][0]) {
+                   } else if (getLine(line)[0][0] == '5') {
                        mySquare.push_back(new PenaltySquare(stoi(getLine(line)[0]), getLine(line)[1]));
+                       break;
+                   } else if (getLine(line)[0][0] == '6') {
+                       mySquare.push_back(new JailSquare(stoi(getLine(line)[0]), getLine(line)[1]));
+                       break;
+                   } else if (getLine(line)[0][0] == '7') {
+                       mySquare.push_back(new GotoJailSquare(stoi(getLine(line)[0]), getLine(line)[1]));
+                       break;
+                   } else if (getLine(line)[0][0] == '8') {
+                       mySquare.push_back(new FreeParking(stoi(getLine(line)[0]), getLine(line)[1]));
                        break;
                    } else {
                        mySquare.push_back(new CSquare(stoi(getLine(line)[0]),getLine(line)[1]));
