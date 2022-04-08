@@ -15,6 +15,7 @@ private:
     float propertyCost{};
     float propertyRent{};
     int colorGroup{};
+    bool mortgaged = false;
 
 public:
     Properties();
@@ -38,6 +39,12 @@ public:
     int getColorGroup() const;
 
     void setColorGroup(int colorGroup);
+
+    bool isMortgaged() const;
+
+    void setMortgaged(bool mortgaged);
+
+
 };
 
 

@@ -14,6 +14,7 @@
 #include <cstring>
 #include <utility>
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
@@ -161,6 +162,29 @@ FileOperations::~FileOperations() {
     }
 
 }
+
+
+void FileOperations::createValueOrder() {
+    for (int i = 0; i < 26; ++i) {
+        if (getMySquare()[i]->getSquareType() == 1 || getMySquare()[i]->getSquareType() == 3) {
+            orderedMySquare.emplace_back(getMySquare()[i]);
+        } else {
+            continue;
+        }
+    }
+
+    sort(orderedMySquare.begin(),orderedMySquare.end(),
+         [] (CSquare* a, CSquare* b)
+         {return a->getPropertyCost() < b->getPropertyCost();}
+         );
+
+}
+
+const vectorSquare &FileOperations::getOrderedMySquare() const {
+    return orderedMySquare;
+}
+
+
 
 
 

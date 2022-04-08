@@ -33,6 +33,14 @@ public:
     int getPlayerPosition() const;
 
     void setPlayerPosition(int playerPosition);
+
+    void addLentMoney(float mortgageValue);
+
+    void repayMortgage(float repayAmount);
+
+    bool haveSufficientFunds(float propertyCost);
+
+    bool isBankrupt();
 };
 
 

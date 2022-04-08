@@ -25,6 +25,7 @@ private:
     //CSquare* mySquare[26];
 //    vector<CSquare *> mySquare;
     vectorSquare mySquare;
+    vectorSquare orderedMySquare;
     map<string, int> position;
     static bool isNumber(const string& str);
     static vectorString getLine(string line);
@@ -45,6 +46,10 @@ public:
     void setPosition(const map<string, int> &position);
 
     int findPosition(string squareName);
+
+    void createValueOrder();
+
+    const vectorSquare &getOrderedMySquare() const;
 
 };
 

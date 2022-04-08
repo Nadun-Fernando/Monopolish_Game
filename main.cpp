@@ -52,6 +52,7 @@ int main() {
     unique_ptr<Station> station(make_unique<Station>());//new Station();
 
     fileOperations->readMonopolyData();
+    fileOperations->createValueOrder();
     userInterface->setChance("playerOne");
     srand(5);///read seed file needs to be added
     //cout << fileOperations->getMySquare().size() << endl;
@@ -67,7 +68,7 @@ int main() {
                 cout << "\n============== Chance of the Player One ==================";
                 userInterface->setRandomNumber(userInterface->rollDice());
 
-                if (25 > (playerOne->getPlayerPosition() + userInterface->getRandomNumber())) {
+                if (25 >= (playerOne->getPlayerPosition() + userInterface->getRandomNumber())) {
                     playerOne->setPlayerPosition(playerOne->getPlayerPosition() + userInterface->getRandomNumber());
                     squareName = fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getSquareName();
                     userInterface->setPassesGo(false);
@@ -155,6 +156,23 @@ int main() {
                 userInterface->displayPropertyTransactions(playerOne->getPlayerName(),squareName,cost,caseValue);
 
                 userInterface->displayPlayerAmount(playerOne->getPlayerName(),playerOne->getPlayerMoney());
+                ///working on
+                if (playerOne->getPlayerMoney() < 0) {
+                    for (int k = 0; k < fileOperations->getOrderedMySquare().size(); ++k) {
+                        if (fileOperations->getOrderedMySquare()[k]->getPropertyOwner() == playerOne->getPlayerName()) {
+                            if (!fileOperations->getOrderedMySquare()[k]->isMortgaged()) {
+                                fileOperations->getOrderedMySquare()[k]->setMortgaged(true);
+                                playerOne->addLentMoney(fileOperations->getOrderedMySquare()[k]->getPropertyCost());
+
+                                cout << playerOne->getPlayerName() << " has mortgaged " << fileOperations->getOrderedMySquare()[k]->getSquareName() << endl;
+                                cout << playerOne->getPlayerName() << " has " << playerOne->getPlayerMoney() << endl;
+                            }
+                        }
+                        if (playerOne->getPlayerMoney() >= 0) {
+                            break;
+                        }
+                    }
+                }
 
                 userInterface->setChance("playerTwo");
                 cout << "\n============== End of the Chance of the Player One =================="  << endl;
@@ -167,7 +185,7 @@ int main() {
                 cout << "\n============== Chance of the Player Two ==================";
                 userInterface->setRandomNumber(userInterface->rollDice());
 
-                if (25 > (playerTwo->getPlayerPosition() + userInterface->getRandomNumber())) {
+                if (25 >= (playerTwo->getPlayerPosition() + userInterface->getRandomNumber())) {
                     playerTwo->setPlayerPosition(playerTwo->getPlayerPosition() + userInterface->getRandomNumber());
                     squareName = fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getSquareName();
                     userInterface->setPassesGo(false);
@@ -177,7 +195,7 @@ int main() {
                     playerTwo->setPlayerMoney(playerTwo->getPlayerMoney() + 200);
                     userInterface->setPassesGo(true);
                 }
-                
+
                 if (rightTrim(squareName) == "Bonus") {
                     userInterface->setRollBonusPenalty(userInterface->rollDice());
                     playerTwo->setPlayerMoney(playerTwo->getPlayerMoney() + fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getBonusMoney(userInterface->getRollBonusPenalty()));
@@ -190,7 +208,6 @@ int main() {
                     userInterface->setBonus(false);
                     userInterface->setPenalty(false);
                 }
-                
                 userInterface->displayMove(userInterface->getRandomNumber(),playerTwo->getPlayerName(),rightTrim(squareName),userInterface->isPassesGo(),userInterface->isBonus(),userInterface->isPenalty(),userInterface->getRollBonusPenalty());
 
                 if (rightTrim(squareName) == "Go to Jail") {
@@ -253,6 +270,23 @@ int main() {
 
                 userInterface->displayPlayerAmount(playerTwo->getPlayerName(),playerTwo->getPlayerMoney());
 
+                ///working on
+                if (playerTwo->getPlayerMoney() < 0) {
+                    for (int k = 0; k < fileOperations->getOrderedMySquare().size(); ++k) {
+                        if (fileOperations->getOrderedMySquare()[k]->getPropertyOwner() == playerTwo->getPlayerName()) {
+                            if (!fileOperations->getOrderedMySquare()[k]->isMortgaged()) {
+                                fileOperations->getOrderedMySquare()[k]->setMortgaged(true);
+                                playerTwo->addLentMoney(fileOperations->getOrderedMySquare()[k]->getPropertyCost());
+                                cout << playerTwo->getPlayerName() << " has mortgaged " << fileOperations->getOrderedMySquare()[k]->getSquareName() << endl;
+                                cout << playerTwo->getPlayerName() << " has " << playerTwo->getPlayerMoney() << endl;
+                            }
+                        }
+                        if (playerTwo->getPlayerMoney() >= 0) {
+                            break;
+                        }
+                    }
+                }
+
                 userInterface->setChance("playerOne");
                 cout << "\n============== End of the Chance of the Player Two =================="  << endl;
             }
@@ -311,5 +345,4 @@ int main() {
     system("pause");
 
     return 0;
-    cout  << _CrtDumpMemoryLeaks();
 }

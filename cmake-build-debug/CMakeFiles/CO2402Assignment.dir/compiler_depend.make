@@ -273,7 +273,11 @@ CMakeFiles\CO2402Assignment.dir\FileOperations.cpp.obj: ..\Properties.h
 CMakeFiles\CO2402Assignment.dir\FileOperations.cpp.obj: ..\Station.h
 CMakeFiles\CO2402Assignment.dir\FileOperations.cpp.obj: ..\BonusSquare.h
 CMakeFiles\CO2402Assignment.dir\FileOperations.cpp.obj: ..\PenaltySquare.h
+CMakeFiles\CO2402Assignment.dir\FileOperations.cpp.obj: ..\JailSquare.h
+CMakeFiles\CO2402Assignment.dir\FileOperations.cpp.obj: ..\GotoJailSquare.h
+CMakeFiles\CO2402Assignment.dir\FileOperations.cpp.obj: ..\FreeParking.h
 CMakeFiles\CO2402Assignment.dir\FileOperations.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\iostream"
+CMakeFiles\CO2402Assignment.dir\FileOperations.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\algorithm"
 
 
 CMakeFiles\CO2402Assignment.dir\FreeParking.cpp.obj: ..\FreeParking.cpp
@@ -1790,17 +1794,17 @@ CMakeFiles\CO2402Assignment.dir\main.cpp.obj: ..\Player.h
 
 ..\Station.h:
 
-"D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\iostream":
-
-..\FreeParking.cpp:
+..\GotoJailSquare.h:
 
 "D:\Windows Kits\10\include\10.0.19041.0\shared\wnnc.h":
 
 ..\FreeParking.h:
 
-..\GotoJailSquare.cpp:
+"D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\iostream":
 
-..\GotoJailSquare.h:
+..\FreeParking.cpp:
+
+..\GotoJailSquare.cpp:
 
 ..\JailSquare.cpp:
 

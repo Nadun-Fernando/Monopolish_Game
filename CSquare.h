@@ -35,6 +35,8 @@ public:
     virtual string getPropertyOwner() const;
     virtual int getBonusMoney(int rolledNumber);
     virtual void setPropertyOwner(const string propertyOwner);
+    virtual bool isMortgaged() const;
+    virtual void setMortgaged(bool mortgaged);
 };
 
 

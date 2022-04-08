@@ -39,3 +39,29 @@ int Player::getPlayerPosition() const {
 void Player::setPlayerPosition(int playerPosition) {
     Player::playerPosition = playerPosition;
 }
+
+void Player::addLentMoney(float mortgageValue) {
+    setPlayerMoney(getPlayerMoney() + mortgageValue);
+}
+
+void Player::repayMortgage(float repayAmount) {
+    setPlayerMoney(getPlayerMoney() - repayAmount);
+}
+
+bool Player::isBankrupt() {
+    if (getPlayerMoney() < 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+bool Player::haveSufficientFunds(float propertyCost) {
+    if ((getPlayerMoney() - propertyCost) >= 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+

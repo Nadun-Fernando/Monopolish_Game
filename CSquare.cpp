@@ -53,6 +53,14 @@ int CSquare::getBonusMoney(int rolledNumber) {
     return 0;
 }
 
+bool CSquare::isMortgaged() const {
+    return false;
+}
+
+void CSquare::setMortgaged(bool mortgaged) {
+
+}
+
 
 
 

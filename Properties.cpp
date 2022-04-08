@@ -46,3 +46,11 @@ void Properties::setPropertyOwner(const string propertyOwner) {
     Properties::propertyOwner = propertyOwner;
 }
 
+bool Properties::isMortgaged() const {
+    return mortgaged;
+}
+
+void Properties::setMortgaged(bool mortgaged) {
+    Properties::mortgaged = mortgaged;
+}
+
