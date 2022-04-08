@@ -13,6 +13,7 @@ private:
     const float stationCost = 200.00;
     const float ticketPrice = 10.00;
     string propertyOwner;
+    bool mortgaged = false;
 
 
 public:
@@ -27,6 +28,10 @@ public:
     string getPropertyOwner() const override;
 
     void setPropertyOwner(const string propertyOwner) override;
+
+    bool isMortgaged() const override;
+
+    void setMortgaged(bool mortgaged) override;
 };
 
 

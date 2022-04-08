@@ -29,4 +29,12 @@ void Station::setPropertyOwner(const string propertyOwner) {
     this->propertyOwner = propertyOwner;
 }
 
+bool Station::isMortgaged() const {
+    return mortgaged;
+}
+
+void Station::setMortgaged(bool mortgaged) {
+    Station::mortgaged = mortgaged;
+}
+
 

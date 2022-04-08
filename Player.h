@@ -14,6 +14,8 @@ private:
     string playerName;
     float playerMoney;
     int playerPosition;
+    bool bankrupt = false;
+    bool lentMoney = false;
 
 public:
     Player();
@@ -40,7 +42,13 @@ public:
 
     bool haveSufficientFunds(float propertyCost);
 
-    bool isBankrupt();
+    bool isBankrupt() const;
+
+    void setBankrupt(bool bankrupt);
+
+    bool isLentMoney() const;
+
+    void setLentMoney(bool lentMoney);
 };
 
 

@@ -184,6 +184,52 @@ const vectorSquare &FileOperations::getOrderedMySquare() const {
     return orderedMySquare;
 }
 
+float FileOperations::calculateColorGroupCost(float cost, int playerPosition, const string& ownerName) {
+    int colorGroup = getMySquare()[playerPosition]->getColorGroup();
+
+    if (getMySquare()[playerPosition + 1]->getColorGroup() == colorGroup
+        && getMySquare()[playerPosition + 1]->getPropertyOwner() == ownerName)
+    {
+        if (getMySquare()[playerPosition + 2]->getSquareType() == 1
+            && getMySquare()[playerPosition + 2]->getPropertyOwner() == ownerName
+            && getMySquare()[playerPosition + 2]->getColorGroup()  == colorGroup)
+        {
+
+            cout << "true" << endl;
+            cost = cost * 2;
+
+        } else if (getMySquare()[playerPosition - 1]->getColorGroup() == colorGroup
+                   && getMySquare()[playerPosition - 1]->getPropertyOwner() == ownerName)
+        {
+            cout << "true" << endl;
+            cost = cost * 2;
+        } else if ((getMySquare()[playerPosition + 2]->getSquareType() != 1)
+                   && (getMySquare()[playerPosition - 1]->getSquareType() != 1))
+        {
+            cout << "true" << endl;
+            cost = cost * 2;
+        }
+    } else if (getMySquare()[playerPosition - 1]->getColorGroup() == colorGroup
+               && getMySquare()[playerPosition - 1]->getPropertyOwner() == ownerName)
+    {
+        if (getMySquare()[playerPosition - 2]->getSquareType() == 1
+            && getMySquare()[playerPosition - 2]->getPropertyOwner() == ownerName
+            && getMySquare()[playerPosition - 2]->getColorGroup()  == colorGroup)
+        {
+
+            cout << "true" << endl;
+            cost = cost * 2;
+
+        } else if ((getMySquare()[playerPosition - 2]->getSquareType() != 1)
+                   && (getMySquare()[playerPosition + 1]->getSquareType() != 1))
+        {
+            cout << "true" << endl;
+            cost = cost * 2;
+        }
+    }
+    return cost;
+}
+
 
 
 

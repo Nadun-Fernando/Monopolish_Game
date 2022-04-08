@@ -196,10 +196,12 @@ void UserInterface::thankYou() {
     printf("\n\n\n\n");
 }
 
-void UserInterface::displayEndResult(const string& winnerName, float winnerMoney, const string& loserName, float loserMoney) {
+void UserInterface::displayEndResult(const string& winnerName, float winnerMoney, const string& loserNameOne, float loserMoneyOne,const string& loserNameTwo, float loserMoneyTwo, const string& loserNameThree, float loserMoneyThree ) {
     cout << "\n GAME OVER!!!";
     cout << "\n" + winnerName + " has "  << fixed << setprecision(2) <<  winnerMoney;
-    cout << "\n" + loserName + " has " << fixed << setprecision(2) << loserMoney;
+    cout << "\n" + loserNameOne + " has " << fixed << setprecision(2) << loserMoneyOne;
+    cout << "\n" + loserNameTwo + " has " << fixed << setprecision(2) << loserMoneyTwo;
+    cout << "\n" + loserNameThree + " has " << fixed << setprecision(2) << loserMoneyThree;
     cout << "\n" + winnerName + " has WON";
 }
 

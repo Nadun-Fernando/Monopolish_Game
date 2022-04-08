@@ -48,20 +48,28 @@ void Player::repayMortgage(float repayAmount) {
     setPlayerMoney(getPlayerMoney() - repayAmount);
 }
 
-bool Player::isBankrupt() {
-    if (getPlayerMoney() < 0) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
 bool Player::haveSufficientFunds(float propertyCost) {
     if ((getPlayerMoney() - propertyCost) >= 0) {
         return true;
     } else {
         return false;
     }
+}
+
+bool Player::isBankrupt() const {
+    return bankrupt;
+}
+
+void Player::setBankrupt(bool bankrupt) {
+    Player::bankrupt = bankrupt;
+}
+
+bool Player::isLentMoney() const {
+    return lentMoney;
+}
+
+void Player::setLentMoney(bool lentMoney) {
+    Player::lentMoney = lentMoney;
 }
 
 

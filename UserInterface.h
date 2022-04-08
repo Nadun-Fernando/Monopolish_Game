@@ -61,7 +61,7 @@ public:
 
     static void thankYou();
 
-    void displayEndResult(const string& winnerName, float winnerMoney, const string& loserName, float loserMoney);
+    void displayEndResult(const string& winnerName, float winnerMoney, const string& loserNameOne, float loserMoneyOne,const string& loserNameTwo, float loserMoneyTwo, const string& loserNameThree, float loserMoneyThree);
 
     void displayPropertyTransactions(const string& playerName, const string& squareName, float cost, char value) const;
 

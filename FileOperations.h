@@ -51,6 +51,8 @@ public:
 
     const vectorSquare &getOrderedMySquare() const;
 
+    float calculateColorGroupCost(float cost, int playerPosition, const string& ownerName);
+
 };
 
 

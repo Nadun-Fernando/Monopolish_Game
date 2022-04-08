@@ -54,3 +54,5 @@ void Properties::setMortgaged(bool mortgaged) {
     Properties::mortgaged = mortgaged;
 }
 
+
+
