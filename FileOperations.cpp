@@ -230,6 +230,26 @@ float FileOperations::calculateColorGroupCost(float cost, int playerPosition, co
     return cost;
 }
 
+int FileOperations::getSeedValue() const {
+    return seedValue;
+}
+
+void FileOperations::setSeedValue(int seedValue) {
+    FileOperations::seedValue = seedValue;
+}
+
+void FileOperations::readSeed(string fileName) {
+    ifstream mySeedFile;
+    mySeedFile.open(fileName);
+
+    if (mySeedFile.is_open()) {
+        while (!mySeedFile.eof()) {
+            mySeedFile >> seedValue;
+        }
+        mySeedFile.close();
+    }
+}
+
 
 
 

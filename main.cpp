@@ -19,10 +19,184 @@
 
 using namespace std;
 
+#define SQUARE_TYPE(mainPlayer) fileOperations->getMySquare()[mainPlayer->getPlayerPosition()]->getSquareType()
+
 
 string rightTrim(string word) {
     return word.erase(word.find_last_not_of(" \n\r\t")+1);
 }
+
+void playTurn(unique_ptr<Player>& mainPlayer, unique_ptr<UserInterface>& userInterface, unique_ptr<FileOperations>& fileOperations) {
+    string squareName;
+    userInterface->setRandomNumber(userInterface->rollDice());
+
+    if (25 >= (mainPlayer->getPlayerPosition() + userInterface->getRandomNumber())) {
+        mainPlayer->setPlayerPosition(mainPlayer->getPlayerPosition() + userInterface->getRandomNumber());
+        squareName = fileOperations->getMySquare()[mainPlayer->getPlayerPosition()]->getSquareName();
+        userInterface->setPassesGo(false);
+    } else if (25 < (mainPlayer->getPlayerPosition() + userInterface->getRandomNumber())) {
+        mainPlayer->setPlayerPosition((mainPlayer->getPlayerPosition() + userInterface->getRandomNumber()) - 25);
+        squareName = fileOperations->getMySquare()[mainPlayer->getPlayerPosition()]->getSquareName();
+        mainPlayer->setPlayerMoney(mainPlayer->getPlayerMoney() + 200);
+        userInterface->setPassesGo(true);
+    }
+
+    if (rightTrim(squareName) == "Bonus") {
+        userInterface->setRollBonusPenalty(userInterface->rollDice());
+        mainPlayer->setPlayerMoney(mainPlayer->getPlayerMoney() + fileOperations->getMySquare()[mainPlayer->getPlayerPosition()]->getBonusMoney(userInterface->getRollBonusPenalty()));
+        userInterface->setBonus(true);
+    } else if (rightTrim(squareName) == "Penalty") {
+        userInterface->setRollBonusPenalty(userInterface->rollDice());
+        mainPlayer->setPlayerMoney(mainPlayer->getPlayerMoney() - fileOperations->getMySquare()[mainPlayer->getPlayerPosition()]->getBonusMoney(userInterface->getRollBonusPenalty()));
+        userInterface->setPenalty(true);
+    } else {
+        userInterface->setBonus(false);
+        userInterface->setPenalty(false);
+    }
+
+    userInterface->displayMove(userInterface->getRandomNumber(),mainPlayer->getPlayerName(),rightTrim(squareName),userInterface->isPassesGo(),userInterface->isBonus(),userInterface->isPenalty(),userInterface->getRollBonusPenalty());
+
+    if (rightTrim(squareName) == "Go to Jail") {
+        mainPlayer->setPlayerMoney(mainPlayer->getPlayerMoney() - fileOperations->getMySquare()[mainPlayer->getPlayerPosition()]->getPropertyCost());
+        mainPlayer->setPlayerPosition(fileOperations->findPosition("Jail "));
+
+    }
+}
+
+void propertyTransactions(unique_ptr<Player>& mainPlayer,
+                          unique_ptr<Player>& secondPlayer,
+                          unique_ptr<Player>& thirdPlayer,
+                          unique_ptr<Player>& fourthPlayer,
+                          unique_ptr<UserInterface>& userInterface,
+                          unique_ptr<FileOperations>& fileOperations,
+                          string& squareName) {
+    int colorGroup = 0;
+    float cost = 0;
+    char caseValue = 0;
+
+    if (SQUARE_TYPE(mainPlayer) == 1 || SQUARE_TYPE(mainPlayer) == 3 ) {
+
+        if (fileOperations->getMySquare()[mainPlayer->getPlayerPosition()]->getPropertyOwner().empty() &&
+                mainPlayer->getPlayerMoney() > 0) {
+
+            cost = fileOperations->getMySquare()[mainPlayer->getPlayerPosition()]->getPropertyCost();
+
+            caseValue = 'A';
+
+            fileOperations->getMySquare()[mainPlayer->getPlayerPosition()]->setPropertyOwner(
+                    mainPlayer->getPlayerName());
+
+            mainPlayer->setPlayerMoney(mainPlayer->getPlayerMoney() - cost);
+
+            //userInterface->displayPropertyTransactions(playerOne->getPlayerName(),squareName,cost,false);
+        } else if (fileOperations->getMySquare()[mainPlayer->getPlayerPosition()]->getPropertyOwner() ==
+                mainPlayer->getPlayerName()) {
+
+            cost = 0;
+            caseValue = 0;
+
+        } else if ((mainPlayer->getPlayerName() !=
+                    fileOperations->getMySquare()[mainPlayer->getPlayerPosition()]->getPropertyOwner())
+                    && (!fileOperations->getMySquare()[mainPlayer->getPlayerPosition()]->isMortgaged())){
+
+            if (fileOperations->getMySquare()[mainPlayer->getPlayerPosition()]->getPropertyOwner() == secondPlayer->getPlayerName()) {
+                cost = fileOperations->getMySquare()[mainPlayer->getPlayerPosition()]->getPropertyRent();
+
+                if (fileOperations->getMySquare()[mainPlayer->getPlayerPosition()]->getSquareType() == 1) {
+                    //cut a code set
+                    cost = fileOperations->calculateColorGroupCost(cost, mainPlayer->getPlayerPosition(), secondPlayer->getPlayerName());
+                    caseValue = 'B';
+                } else if (fileOperations->getMySquare()[mainPlayer->getPlayerPosition()]->getSquareType() == 3){
+                    caseValue = 'C';
+                }
+
+                mainPlayer->setPlayerMoney(mainPlayer->getPlayerMoney() - cost);
+
+
+                secondPlayer->setPlayerMoney(secondPlayer->getPlayerMoney() + cost);
+            } else if (fileOperations->getMySquare()[mainPlayer->getPlayerPosition()]->getPropertyOwner() == thirdPlayer->getPlayerName()) {
+                cost = fileOperations->getMySquare()[mainPlayer->getPlayerPosition()]->getPropertyRent();
+
+                if (fileOperations->getMySquare()[mainPlayer->getPlayerPosition()]->getSquareType() == 1) {
+                    cost = fileOperations->calculateColorGroupCost(cost, mainPlayer->getPlayerPosition(), thirdPlayer->getPlayerName());
+                    caseValue = 'B';
+                } else if (fileOperations->getMySquare()[mainPlayer->getPlayerPosition()]->getSquareType() == 3){
+                    caseValue = 'C';
+                }
+
+                mainPlayer->setPlayerMoney(mainPlayer->getPlayerMoney() - cost);
+
+
+                thirdPlayer->setPlayerMoney(thirdPlayer->getPlayerMoney() + cost);
+            } else if (fileOperations->getMySquare()[mainPlayer->getPlayerPosition()]->getPropertyOwner() == fourthPlayer->getPlayerName()) {
+                cost = fileOperations->getMySquare()[mainPlayer->getPlayerPosition()]->getPropertyRent();
+
+                if (fileOperations->getMySquare()[mainPlayer->getPlayerPosition()]->getSquareType() == 1) {
+                    cost = fileOperations->calculateColorGroupCost(cost, mainPlayer->getPlayerPosition(), fourthPlayer->getPlayerName());
+                    caseValue = 'B';
+                } else if (fileOperations->getMySquare()[mainPlayer->getPlayerPosition()]->getSquareType() == 3){
+                    caseValue = 'C';
+                }
+
+                mainPlayer->setPlayerMoney(mainPlayer->getPlayerMoney() - cost);
+
+
+                fourthPlayer->setPlayerMoney(fourthPlayer->getPlayerMoney() + cost);
+            }
+        }
+    }
+
+    userInterface->displayPropertyTransactions(mainPlayer->getPlayerName(),squareName,cost,caseValue);
+
+}
+
+void mortgageAndBanckruptancy(unique_ptr<Player>& mainPlayer, unique_ptr<UserInterface>& userInterface, unique_ptr<FileOperations>& fileOperations) {
+    if (mainPlayer->getPlayerMoney() < 0) {
+        for (int k = 0; k < fileOperations->getOrderedMySquare().size(); ++k) {
+            if (fileOperations->getOrderedMySquare()[k]->getPropertyOwner() == mainPlayer->getPlayerName()) {
+                if (!fileOperations->getOrderedMySquare()[k]->isMortgaged()) {
+                    fileOperations->getOrderedMySquare()[k]->setMortgaged(true);
+                    mainPlayer->addLentMoney(fileOperations->getOrderedMySquare()[k]->getPropertyCost());
+                    mainPlayer->setLentMoney(true);
+                    cout << mainPlayer->getPlayerName() << " has mortgaged " << fileOperations->getOrderedMySquare()[k]->getSquareName() << endl;
+                    cout << mainPlayer->getPlayerName() << " has " << mainPlayer->getPlayerMoney() << endl;
+                }
+            }
+            if (mainPlayer->getPlayerMoney() >= 0) {
+                break;
+            }
+        }
+
+        if (mainPlayer->getPlayerMoney() < 0) {
+            mainPlayer->setBankrupt(true);
+        }
+    }
+
+
+    if (mainPlayer->isLentMoney()) {
+        int count = 0;
+        for (int k = 0; k < fileOperations->getOrderedMySquare().size(); ++k) {
+            if (fileOperations->getOrderedMySquare()[k]->getPropertyOwner() == mainPlayer->getPlayerName() && fileOperations->getOrderedMySquare()[k]->isMortgaged()) {
+                ++count;
+                if (mainPlayer->getPlayerMoney() > fileOperations->getOrderedMySquare()[k]->getPropertyCost()) {
+                    fileOperations->getOrderedMySquare()[k]->setMortgaged(false);
+                    mainPlayer->repayMortgage(fileOperations->getOrderedMySquare()[k]->getPropertyCost());
+
+                    cout << "\n" << mainPlayer->getPlayerName() << " has repaid mortgaged for " << fileOperations->getOrderedMySquare()[k]->getSquareName() << endl;
+                    cout << mainPlayer->getPlayerName() << " has " << mainPlayer->getPlayerMoney() << endl;
+                } else {
+                    break;
+                }
+            }
+        }
+
+        if (count == 0) {
+            mainPlayer->setLentMoney(false);
+        }
+    }
+}
+
+
 
 
 int main() {
@@ -48,183 +222,33 @@ int main() {
 
     unique_ptr<UserInterface> userInterface(make_unique<UserInterface>()); //new UserInterface();
 
-
+    //userInterface->intro();
 
     unique_ptr<Station> station(make_unique<Station>());//new Station();
 
     fileOperations->readMonopolyData();
     fileOperations->createValueOrder();
     userInterface->setChance("playerOne");
-    srand(5);///read seed file needs to be added
+    fileOperations->readSeed("../Resources/seed.txt");
+    srand(fileOperations->getSeedValue());///read seed file needs to be added
     //cout << fileOperations->getMySquare().size() << endl;
     for (int i = 0; i < 20; ++i) {
         string squareName;
         cout << "\n\n\n======================Round " + to_string(i + 1) + "==============================";
         for (int j = 0; j < 4; ++j) {
             if (userInterface->getChance() == "playerOne" && (!playerOne->isBankrupt())) {
-                int colorGroup = 0;
-                float cost = 0;
-                char caseValue = 0;
+//                int colorGroup = 0;
+//                float cost = 0;
+//                char caseValue = 0;
 
                 cout << "\n============== Chance of the Player One ==================";
-                userInterface->setRandomNumber(userInterface->rollDice());
+                playTurn(playerOne,userInterface, fileOperations);
+                squareName = fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getSquareName();
 
-                if (25 >= (playerOne->getPlayerPosition() + userInterface->getRandomNumber())) {
-                    playerOne->setPlayerPosition(playerOne->getPlayerPosition() + userInterface->getRandomNumber());
-                    squareName = fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getSquareName();
-                    userInterface->setPassesGo(false);
-                } else if (25 < (playerOne->getPlayerPosition() + userInterface->getRandomNumber())) {
-                    playerOne->setPlayerPosition((playerOne->getPlayerPosition() + userInterface->getRandomNumber()) - 25);
-                    squareName = fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getSquareName();
-                    playerOne->setPlayerMoney(playerOne->getPlayerMoney() + 200);
-                    userInterface->setPassesGo(true);
-                }
-
-                if (rightTrim(squareName) == "Bonus") {
-                    userInterface->setRollBonusPenalty(userInterface->rollDice());
-                    playerOne->setPlayerMoney(playerOne->getPlayerMoney() + fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getBonusMoney(userInterface->getRollBonusPenalty()));
-                    userInterface->setBonus(true);
-                } else if (rightTrim(squareName) == "Penalty") {
-                    userInterface->setRollBonusPenalty(userInterface->rollDice());
-                    playerOne->setPlayerMoney(playerOne->getPlayerMoney() - fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getBonusMoney(userInterface->getRollBonusPenalty()));
-                    userInterface->setPenalty(true);
-                } else {
-                    userInterface->setBonus(false);
-                    userInterface->setPenalty(false);
-                }
-
-                userInterface->displayMove(userInterface->getRandomNumber(),playerOne->getPlayerName(),rightTrim(squareName),userInterface->isPassesGo(),userInterface->isBonus(),userInterface->isPenalty(),userInterface->getRollBonusPenalty());
-
-                if (rightTrim(squareName) == "Go to Jail") {
-                    playerOne->setPlayerMoney(playerOne->getPlayerMoney() - fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getPropertyCost());
-                    playerOne->setPlayerPosition(fileOperations->findPosition("Jail "));
-
-                }
-
-                if (fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getSquareType() == 1 ||
-                    fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getSquareType() == 3 ) {
-
-                    if (fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getPropertyOwner().empty() &&
-                        playerOne->getPlayerMoney() > 0) {
-
-                        cost = fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getPropertyCost();
-
-                        caseValue = 'A';
-
-                        fileOperations->getMySquare()[playerOne->getPlayerPosition()]->setPropertyOwner(
-                                playerOne->getPlayerName());
-
-                        playerOne->setPlayerMoney(playerOne->getPlayerMoney() - cost);
-
-                        //userInterface->displayPropertyTransactions(playerOne->getPlayerName(),squareName,cost,false);
-                    } else if (fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getPropertyOwner() ==
-                               playerOne->getPlayerName()) {
-
-                        cost = 0;
-                        caseValue = 0;
-
-                    } else if ((playerTwo->getPlayerName() ==
-                                fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getPropertyOwner()) && (!fileOperations->getMySquare()[playerOne->getPlayerPosition()]->isMortgaged())){
-
-                        cost = fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getPropertyRent();
-
-                        if (fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getSquareType() == 1) {
-                            //cut a code set
-                            cost = fileOperations->calculateColorGroupCost(cost, playerOne->getPlayerPosition(), playerTwo->getPlayerName());
-                            caseValue = 'B';
-                        } else if (fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getSquareType() == 3){
-                            caseValue = 'C';
-                        }
-
-                        playerOne->setPlayerMoney(playerOne->getPlayerMoney() - cost);
-
-
-                        playerTwo->setPlayerMoney(playerTwo->getPlayerMoney() + cost);
-
-                    } else if ((playerThree->getPlayerName() ==
-                                fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getPropertyOwner()) && (!fileOperations->getMySquare()[playerOne->getPlayerPosition()]->isMortgaged())){
-
-                        cost = fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getPropertyRent();
-
-                        if (fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getSquareType() == 1) {
-                            cost = fileOperations->calculateColorGroupCost(cost, playerOne->getPlayerPosition(), playerThree->getPlayerName());
-                            caseValue = 'B';
-                        } else if (fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getSquareType() == 3){
-                            caseValue = 'C';
-                        }
-
-                        playerOne->setPlayerMoney(playerOne->getPlayerMoney() - cost);
-
-
-                        playerThree->setPlayerMoney(playerThree->getPlayerMoney() + cost);
-
-                    } else if ((playerFour->getPlayerName() ==
-                                fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getPropertyOwner()) && (!fileOperations->getMySquare()[playerOne->getPlayerPosition()]->isMortgaged())){
-
-                        cost = fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getPropertyRent();
-
-                        if (fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getSquareType() == 1) {
-                            cost = fileOperations->calculateColorGroupCost(cost, playerOne->getPlayerPosition(), playerFour->getPlayerName());
-                            caseValue = 'B';
-                        } else if (fileOperations->getMySquare()[playerOne->getPlayerPosition()]->getSquareType() == 3){
-                            caseValue = 'C';
-                        }
-
-                        playerOne->setPlayerMoney(playerOne->getPlayerMoney() - cost);
-
-
-                        playerFour->setPlayerMoney(playerFour->getPlayerMoney() + cost);
-
-                    }
-                }
-
-                userInterface->displayPropertyTransactions(playerOne->getPlayerName(),squareName,cost,caseValue);
-
+                propertyTransactions(playerOne,playerTwo, playerThree, playerFour, userInterface, fileOperations, squareName);
                 userInterface->displayPlayerAmount(playerOne->getPlayerName(),playerOne->getPlayerMoney());
-                ///working on
-                if (playerOne->getPlayerMoney() < 0) {
-                    for (int k = 0; k < fileOperations->getOrderedMySquare().size(); ++k) {
-                        if (fileOperations->getOrderedMySquare()[k]->getPropertyOwner() == playerOne->getPlayerName()) {
-                            if (!fileOperations->getOrderedMySquare()[k]->isMortgaged()) {
-                                fileOperations->getOrderedMySquare()[k]->setMortgaged(true);
-                                playerOne->addLentMoney(fileOperations->getOrderedMySquare()[k]->getPropertyCost());
-                                playerOne->setLentMoney(true);
 
-                                cout << "\n" << playerOne->getPlayerName() << " has mortgaged " << fileOperations->getOrderedMySquare()[k]->getSquareName() << endl;
-                                cout << playerOne->getPlayerName() << " has " << playerOne->getPlayerMoney() << endl;
-                            }
-                        }
-                        if (playerOne->getPlayerMoney() >= 0) {
-                            break;
-                        }
-                    }
-
-                    if (playerOne->getPlayerMoney() < 0) {
-                        playerOne->setBankrupt(true);
-                    }
-                }
-
-                if (playerOne->isLentMoney()) {
-                    int count = 0;
-                    for (int k = 0; k < fileOperations->getOrderedMySquare().size(); ++k) {
-                        if (fileOperations->getOrderedMySquare()[k]->getPropertyOwner() == playerOne->getPlayerName() && fileOperations->getOrderedMySquare()[k]->isMortgaged()) {
-                            ++count;
-                            if (playerOne->getPlayerMoney() > fileOperations->getOrderedMySquare()[k]->getPropertyCost()) {
-                                fileOperations->getOrderedMySquare()[k]->setMortgaged(false);
-                                playerOne->repayMortgage(fileOperations->getOrderedMySquare()[k]->getPropertyCost());
-
-                                cout << "\n" << playerOne->getPlayerName() << " has repaid mortgaged for " << fileOperations->getOrderedMySquare()[k]->getSquareName() << endl;
-                                cout << playerOne->getPlayerName() << " has " << playerOne->getPlayerMoney() << endl;
-                            } else {
-                                break;
-                            }
-                        }
-                    }
-
-                    if (count == 0) {
-                        playerOne->setLentMoney(false);
-                    }
-                }
+                mortgageAndBanckruptancy(playerOne, userInterface, fileOperations);
 
                 userInterface->setChance("playerTwo");
                 cout << "\n============== End of the Chance of the Player One =================="  << endl;
@@ -235,164 +259,13 @@ int main() {
                 char caseValue = 0;
 
                 cout << "\n============== Chance of the Player Two ==================";
-                userInterface->setRandomNumber(userInterface->rollDice());
+                playTurn(playerTwo, userInterface, fileOperations);
+                squareName = fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getSquareName();
 
-                if (25 >= (playerTwo->getPlayerPosition() + userInterface->getRandomNumber())) {
-                    playerTwo->setPlayerPosition(playerTwo->getPlayerPosition() + userInterface->getRandomNumber());
-                    squareName = fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getSquareName();
-                    userInterface->setPassesGo(false);
-                } else if (25 < (playerTwo->getPlayerPosition() + userInterface->getRandomNumber())) {
-                    playerTwo->setPlayerPosition((playerTwo->getPlayerPosition() + userInterface->getRandomNumber()) - 25);
-                    squareName = fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getSquareName();
-                    playerTwo->setPlayerMoney(playerTwo->getPlayerMoney() + 200);
-                    userInterface->setPassesGo(true);
-                }
-
-                if (rightTrim(squareName) == "Bonus") {
-                    userInterface->setRollBonusPenalty(userInterface->rollDice());
-                    playerTwo->setPlayerMoney(playerTwo->getPlayerMoney() + fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getBonusMoney(userInterface->getRollBonusPenalty()));
-                    userInterface->setBonus(true);
-                } else if (rightTrim(squareName) == "Penalty") {
-                    userInterface->setRollBonusPenalty(userInterface->rollDice());
-                    playerTwo->setPlayerMoney(playerTwo->getPlayerMoney() - fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getBonusMoney(userInterface->getRollBonusPenalty()));
-                    userInterface->setPenalty(true);
-                } else {
-                    userInterface->setBonus(false);
-                    userInterface->setPenalty(false);
-                }
-                userInterface->displayMove(userInterface->getRandomNumber(),playerTwo->getPlayerName(),rightTrim(squareName),userInterface->isPassesGo(),userInterface->isBonus(),userInterface->isPenalty(),userInterface->getRollBonusPenalty());
-
-                if (rightTrim(squareName) == "Go to Jail") {
-                    playerTwo->setPlayerMoney(playerTwo->getPlayerMoney() - fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getPropertyCost());
-                    playerTwo->setPlayerPosition(fileOperations->findPosition("Jail "));
-
-
-                }
-
-                if (fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getSquareType() == 1 ||
-                    fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getSquareType() == 3) {
-
-                    if (fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getPropertyOwner().empty() &&
-                        playerTwo->getPlayerMoney() > 0) {
-
-                        cost = fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getPropertyCost();
-                        caseValue = 'A';
-                        fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->setPropertyOwner(
-                                playerTwo->getPlayerName());
-                        playerTwo->setPlayerMoney(playerTwo->getPlayerMoney() - cost);
-                        //userInterface->displayPropertyTransactions(playerOne->getPlayerName(),squareName,cost,false);
-
-                    } else if (fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getPropertyOwner() ==
-                               playerTwo->getPlayerName()) {
-
-                        cost = 0;
-                        caseValue = 0;
-
-                    } else if ((playerOne->getPlayerName() ==
-                               fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getPropertyOwner()) &&
-                                ((!fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->isMortgaged()))) {
-
-                        cost = fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getPropertyRent();
-
-                        if (fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getSquareType() == 1) {
-                            cost = fileOperations->calculateColorGroupCost(cost, playerTwo->getPlayerPosition(), playerOne->getPlayerName());
-                            caseValue = 'B';
-                        } else if (fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getSquareType() == 3) {
-                            caseValue = 'C';
-                        }
-
-                        playerTwo->setPlayerMoney(playerTwo->getPlayerMoney() - cost);
-
-
-                        playerOne->setPlayerMoney(playerOne->getPlayerMoney() + cost);
-
-                    } else if ((playerThree->getPlayerName() ==
-                                fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getPropertyOwner()) &&
-                               ((!fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->isMortgaged()))) {
-
-                        cost = fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getPropertyRent();
-
-                        if (fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getSquareType() == 1) {
-                            cost = fileOperations->calculateColorGroupCost(cost, playerTwo->getPlayerPosition(), playerThree->getPlayerName());
-                            caseValue = 'B';
-                        } else if (fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getSquareType() == 3) {
-                            caseValue = 'C';
-                        }
-
-                        playerTwo->setPlayerMoney(playerTwo->getPlayerMoney() - cost);
-
-
-                        playerThree->setPlayerMoney(playerThree->getPlayerMoney() + cost);
-
-                    } else if ((playerFour->getPlayerName() ==
-                                fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getPropertyOwner()) &&
-                               ((!fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->isMortgaged()))) {
-
-                        cost = fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getPropertyRent();
-
-                        if (fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getSquareType() == 1) {
-                            cost = fileOperations->calculateColorGroupCost(cost, playerTwo->getPlayerPosition(), playerFour->getPlayerName());
-                            caseValue = 'B';
-                        } else if (fileOperations->getMySquare()[playerTwo->getPlayerPosition()]->getSquareType() == 3) {
-                            caseValue = 'C';
-                        }
-
-                        playerTwo->setPlayerMoney(playerTwo->getPlayerMoney() - cost);
-
-
-                        playerFour->setPlayerMoney(playerFour->getPlayerMoney() + cost);
-
-                    }
-                }
-
-                userInterface->displayPropertyTransactions(playerTwo->getPlayerName(),squareName,cost,caseValue);
-
+                propertyTransactions(playerTwo, playerOne, playerThree, playerFour, userInterface, fileOperations,squareName);
                 userInterface->displayPlayerAmount(playerTwo->getPlayerName(),playerTwo->getPlayerMoney());
 
-                ///working on
-                if (playerTwo->getPlayerMoney() < 0) {
-                    for (int k = 0; k < fileOperations->getOrderedMySquare().size(); ++k) {
-                        if (fileOperations->getOrderedMySquare()[k]->getPropertyOwner() == playerTwo->getPlayerName()) {
-                            if (!fileOperations->getOrderedMySquare()[k]->isMortgaged()) {
-                                fileOperations->getOrderedMySquare()[k]->setMortgaged(true);
-                                playerTwo->addLentMoney(fileOperations->getOrderedMySquare()[k]->getPropertyCost());
-                                playerTwo->setLentMoney(true);
-                                cout << playerTwo->getPlayerName() << " has mortgaged " << fileOperations->getOrderedMySquare()[k]->getSquareName() << endl;
-                                cout << playerTwo->getPlayerName() << " has " << playerTwo->getPlayerMoney() << endl;
-                            }
-                        }
-                        if (playerTwo->getPlayerMoney() >= 0) {
-                            break;
-                        }
-                    }
-
-                    if (playerTwo->getPlayerMoney() < 0) {
-                        playerTwo->setBankrupt(true);
-                    }
-                }
-
-
-                if (playerTwo->isLentMoney()) {
-                    int count = 0;
-                    for (int k = 0; k < fileOperations->getOrderedMySquare().size(); ++k) {
-                        if (fileOperations->getOrderedMySquare()[k]->getPropertyOwner() == playerTwo->getPlayerName() && fileOperations->getOrderedMySquare()[k]->isMortgaged()) {
-                            ++count;
-                            if (playerTwo->getPlayerMoney() > fileOperations->getOrderedMySquare()[k]->getPropertyCost()) {
-                                fileOperations->getOrderedMySquare()[k]->setMortgaged(false);
-                                playerTwo->repayMortgage(fileOperations->getOrderedMySquare()[k]->getPropertyCost());
-
-                                cout << "\n" << playerTwo->getPlayerName() << " has repaid mortgaged for " << fileOperations->getOrderedMySquare()[k]->getSquareName() << endl;
-                                cout << playerTwo->getPlayerName() << " has " << playerTwo->getPlayerMoney() << endl;
-                            } else {
-                                break;
-                            }
-                        }
-                    }
-
-                    if (count == 0) {
-                        playerTwo->setLentMoney(false);
-                    }
-                }
+                mortgageAndBanckruptancy(playerTwo, userInterface, fileOperations);
 
                 userInterface->setChance("playerThree");
                 cout << "\n============== End of the Chance of the Player Two =================="  << endl;
@@ -403,164 +276,13 @@ int main() {
                 char caseValue = 0;
 
                 cout << "\n============== Chance of the Player Three ==================";
-                userInterface->setRandomNumber(userInterface->rollDice());
+                playTurn(playerThree, userInterface, fileOperations);
+                squareName = fileOperations->getMySquare()[playerThree->getPlayerPosition()]->getSquareName();
 
-                if (25 >= (playerThree->getPlayerPosition() + userInterface->getRandomNumber())) {
-                    playerThree->setPlayerPosition(playerThree->getPlayerPosition() + userInterface->getRandomNumber());
-                    squareName = fileOperations->getMySquare()[playerThree->getPlayerPosition()]->getSquareName();
-                    userInterface->setPassesGo(false);
-                } else if (25 < (playerThree->getPlayerPosition() + userInterface->getRandomNumber())) {
-                    playerThree->setPlayerPosition((playerThree->getPlayerPosition() + userInterface->getRandomNumber()) - 25);
-                    squareName = fileOperations->getMySquare()[playerThree->getPlayerPosition()]->getSquareName();
-                    playerThree->setPlayerMoney(playerThree->getPlayerMoney() + 200);
-                    userInterface->setPassesGo(true);
-                }
-
-                if (rightTrim(squareName) == "Bonus") {
-                    userInterface->setRollBonusPenalty(userInterface->rollDice());
-                    playerThree->setPlayerMoney(playerThree->getPlayerMoney() + fileOperations->getMySquare()[playerThree->getPlayerPosition()]->getBonusMoney(userInterface->getRollBonusPenalty()));
-                    userInterface->setBonus(true);
-                } else if (rightTrim(squareName) == "Penalty") {
-                    userInterface->setRollBonusPenalty(userInterface->rollDice());
-                    playerThree->setPlayerMoney(playerThree->getPlayerMoney() - fileOperations->getMySquare()[playerThree->getPlayerPosition()]->getBonusMoney(userInterface->getRollBonusPenalty()));
-                    userInterface->setPenalty(true);
-                } else {
-                    userInterface->setBonus(false);
-                    userInterface->setPenalty(false);
-                }
-                userInterface->displayMove(userInterface->getRandomNumber(),playerThree->getPlayerName(),rightTrim(squareName),userInterface->isPassesGo(),userInterface->isBonus(),userInterface->isPenalty(),userInterface->getRollBonusPenalty());
-
-                if (rightTrim(squareName) == "Go to Jail") {
-                    playerThree->setPlayerMoney(playerThree->getPlayerMoney() - fileOperations->getMySquare()[playerThree->getPlayerPosition()]->getPropertyCost());
-                    playerThree->setPlayerPosition(fileOperations->findPosition("Jail "));
-
-
-                }
-
-                if (fileOperations->getMySquare()[playerThree->getPlayerPosition()]->getSquareType() == 1 ||
-                    fileOperations->getMySquare()[playerThree->getPlayerPosition()]->getSquareType() == 3) {
-
-                    if (fileOperations->getMySquare()[playerThree->getPlayerPosition()]->getPropertyOwner().empty() &&
-                        playerThree->getPlayerMoney() > 0) {
-
-                        cost = fileOperations->getMySquare()[playerThree->getPlayerPosition()]->getPropertyCost();
-                        caseValue = 'A';
-                        fileOperations->getMySquare()[playerThree->getPlayerPosition()]->setPropertyOwner(
-                                playerThree->getPlayerName());
-                        playerThree->setPlayerMoney(playerThree->getPlayerMoney() - cost);
-                        //userInterface->displayPropertyTransactions(playerOne->getPlayerName(),squareName,cost,false);
-
-                    } else if (fileOperations->getMySquare()[playerThree->getPlayerPosition()]->getPropertyOwner() ==
-                               playerThree->getPlayerName()) {
-
-                        cost = 0;
-                        caseValue = 0;
-
-                    } else if ((playerOne->getPlayerName() ==
-                                fileOperations->getMySquare()[playerThree->getPlayerPosition()]->getPropertyOwner()) &&
-                               ((!fileOperations->getMySquare()[playerThree->getPlayerPosition()]->isMortgaged()))) {
-
-                        cost = fileOperations->getMySquare()[playerThree->getPlayerPosition()]->getPropertyRent();
-
-                        if (fileOperations->getMySquare()[playerThree->getPlayerPosition()]->getSquareType() == 1) {
-                            cost = fileOperations->calculateColorGroupCost(cost, playerThree->getPlayerPosition(), playerOne->getPlayerName());
-                            caseValue = 'B';
-                        } else if (fileOperations->getMySquare()[playerThree->getPlayerPosition()]->getSquareType() == 3) {
-                            caseValue = 'C';
-                        }
-
-                        playerThree->setPlayerMoney(playerThree->getPlayerMoney() - cost);
-
-
-                        playerOne->setPlayerMoney(playerOne->getPlayerMoney() + cost);
-
-                    } else if ((playerTwo->getPlayerName() ==
-                                fileOperations->getMySquare()[playerThree->getPlayerPosition()]->getPropertyOwner()) &&
-                               ((!fileOperations->getMySquare()[playerThree->getPlayerPosition()]->isMortgaged()))) {
-
-                        cost = fileOperations->getMySquare()[playerThree->getPlayerPosition()]->getPropertyRent();
-
-                        if (fileOperations->getMySquare()[playerThree->getPlayerPosition()]->getSquareType() == 1) {
-                            cost = fileOperations->calculateColorGroupCost(cost, playerThree->getPlayerPosition(), playerTwo->getPlayerName());
-                            caseValue = 'B';
-                        } else if (fileOperations->getMySquare()[playerThree->getPlayerPosition()]->getSquareType() == 3) {
-                            caseValue = 'C';
-                        }
-
-                        playerThree->setPlayerMoney(playerThree->getPlayerMoney() - cost);
-
-
-                        playerTwo->setPlayerMoney(playerTwo->getPlayerMoney() + cost);
-
-                    } else if ((playerFour->getPlayerName() ==
-                                fileOperations->getMySquare()[playerThree->getPlayerPosition()]->getPropertyOwner()) &&
-                               ((!fileOperations->getMySquare()[playerThree->getPlayerPosition()]->isMortgaged()))) {
-
-                        cost = fileOperations->getMySquare()[playerThree->getPlayerPosition()]->getPropertyRent();
-
-                        if (fileOperations->getMySquare()[playerThree->getPlayerPosition()]->getSquareType() == 1) {
-                            cost = fileOperations->calculateColorGroupCost(cost, playerThree->getPlayerPosition(), playerFour->getPlayerName());
-                            caseValue = 'B';
-                        } else if (fileOperations->getMySquare()[playerThree->getPlayerPosition()]->getSquareType() == 3) {
-                            caseValue = 'C';
-                        }
-
-                        playerThree->setPlayerMoney(playerThree->getPlayerMoney() - cost);
-
-
-                        playerFour->setPlayerMoney(playerFour->getPlayerMoney() + cost);
-
-                    }
-                }
-
-                userInterface->displayPropertyTransactions(playerThree->getPlayerName(),squareName,cost,caseValue);
-
+                propertyTransactions(playerThree, playerOne, playerTwo, playerFour, userInterface, fileOperations,squareName);
                 userInterface->displayPlayerAmount(playerThree->getPlayerName(),playerThree->getPlayerMoney());
 
-                ///working on
-                if (playerThree->getPlayerMoney() < 0) {
-                    for (int k = 0; k < fileOperations->getOrderedMySquare().size(); ++k) {
-                        if (fileOperations->getOrderedMySquare()[k]->getPropertyOwner() == playerThree->getPlayerName()) {
-                            if (!fileOperations->getOrderedMySquare()[k]->isMortgaged()) {
-                                fileOperations->getOrderedMySquare()[k]->setMortgaged(true);
-                                playerThree->addLentMoney(fileOperations->getOrderedMySquare()[k]->getPropertyCost());
-                                playerThree->setLentMoney(true);
-                                cout << playerThree->getPlayerName() << " has mortgaged " << fileOperations->getOrderedMySquare()[k]->getSquareName() << endl;
-                                cout << playerThree->getPlayerName() << " has " << playerThree->getPlayerMoney() << endl;
-                            }
-                        }
-                        if (playerThree->getPlayerMoney() >= 0) {
-                            break;
-                        }
-                    }
-
-                    if (playerThree->getPlayerMoney() < 0) {
-                        playerThree->setBankrupt(true);
-                    }
-                }
-
-
-                if (playerThree->isLentMoney()) {
-                    int count = 0;
-                    for (int k = 0; k < fileOperations->getOrderedMySquare().size(); ++k) {
-                        if (fileOperations->getOrderedMySquare()[k]->getPropertyOwner() == playerThree->getPlayerName() && fileOperations->getOrderedMySquare()[k]->isMortgaged()) {
-                            ++count;
-                            if (playerThree->getPlayerMoney() > fileOperations->getOrderedMySquare()[k]->getPropertyCost()) {
-                                fileOperations->getOrderedMySquare()[k]->setMortgaged(false);
-                                playerThree->repayMortgage(fileOperations->getOrderedMySquare()[k]->getPropertyCost());
-
-                                cout << "\n" << playerThree->getPlayerName() << " has repaid mortgaged for " << fileOperations->getOrderedMySquare()[k]->getSquareName() << endl;
-                                cout << playerThree->getPlayerName() << " has " << playerThree->getPlayerMoney() << endl;
-                            } else {
-                                break;
-                            }
-                        }
-                    }
-
-                    if (count == 0) {
-                        playerThree->setLentMoney(false);
-                    }
-                }
+                mortgageAndBanckruptancy(playerThree, userInterface, fileOperations);
 
                 userInterface->setChance("playerFour");
                 cout << "\n============== End of the Chance of the Player Three =================="  << endl;
@@ -571,164 +293,15 @@ int main() {
                 char caseValue = 0;
 
                 cout << "\n============== Chance of the Player Four ==================";
-                userInterface->setRandomNumber(userInterface->rollDice());
+                playTurn(playerFour, userInterface, fileOperations);
+                squareName = fileOperations->getMySquare()[playerFour->getPlayerPosition()]->getSquareName();
 
-                if (25 >= (playerFour->getPlayerPosition() + userInterface->getRandomNumber())) {
-                    playerFour->setPlayerPosition(playerFour->getPlayerPosition() + userInterface->getRandomNumber());
-                    squareName = fileOperations->getMySquare()[playerFour->getPlayerPosition()]->getSquareName();
-                    userInterface->setPassesGo(false);
-                } else if (25 < (playerFour->getPlayerPosition() + userInterface->getRandomNumber())) {
-                    playerFour->setPlayerPosition((playerFour->getPlayerPosition() + userInterface->getRandomNumber()) - 25);
-                    squareName = fileOperations->getMySquare()[playerFour->getPlayerPosition()]->getSquareName();
-                    playerFour->setPlayerMoney(playerFour->getPlayerMoney() + 200);
-                    userInterface->setPassesGo(true);
-                }
-
-                if (rightTrim(squareName) == "Bonus") {
-                    userInterface->setRollBonusPenalty(userInterface->rollDice());
-                    playerFour->setPlayerMoney(playerFour->getPlayerMoney() + fileOperations->getMySquare()[playerFour->getPlayerPosition()]->getBonusMoney(userInterface->getRollBonusPenalty()));
-                    userInterface->setBonus(true);
-                } else if (rightTrim(squareName) == "Penalty") {
-                    userInterface->setRollBonusPenalty(userInterface->rollDice());
-                    playerFour->setPlayerMoney(playerFour->getPlayerMoney() - fileOperations->getMySquare()[playerFour->getPlayerPosition()]->getBonusMoney(userInterface->getRollBonusPenalty()));
-                    userInterface->setPenalty(true);
-                } else {
-                    userInterface->setBonus(false);
-                    userInterface->setPenalty(false);
-                }
-                userInterface->displayMove(userInterface->getRandomNumber(),playerFour->getPlayerName(),rightTrim(squareName),userInterface->isPassesGo(),userInterface->isBonus(),userInterface->isPenalty(),userInterface->getRollBonusPenalty());
-
-                if (rightTrim(squareName) == "Go to Jail") {
-                    playerFour->setPlayerMoney(playerFour->getPlayerMoney() - fileOperations->getMySquare()[playerFour->getPlayerPosition()]->getPropertyCost());
-                    playerFour->setPlayerPosition(fileOperations->findPosition("Jail "));
-
-
-                }
-
-                if (fileOperations->getMySquare()[playerFour->getPlayerPosition()]->getSquareType() == 1 ||
-                    fileOperations->getMySquare()[playerFour->getPlayerPosition()]->getSquareType() == 3) {
-
-                    if (fileOperations->getMySquare()[playerFour->getPlayerPosition()]->getPropertyOwner().empty() &&
-                        playerFour->getPlayerMoney() > 0) {
-
-                        cost = fileOperations->getMySquare()[playerFour->getPlayerPosition()]->getPropertyCost();
-                        caseValue = 'A';
-                        fileOperations->getMySquare()[playerFour->getPlayerPosition()]->setPropertyOwner(
-                                playerFour->getPlayerName());
-                        playerFour->setPlayerMoney(playerFour->getPlayerMoney() - cost);
-                        //userInterface->displayPropertyTransactions(playerOne->getPlayerName(),squareName,cost,false);
-
-                    } else if (fileOperations->getMySquare()[playerFour->getPlayerPosition()]->getPropertyOwner() ==
-                               playerFour->getPlayerName()) {
-
-                        cost = 0;
-                        caseValue = 0;
-
-                    } else if ((playerOne->getPlayerName() ==
-                                fileOperations->getMySquare()[playerFour->getPlayerPosition()]->getPropertyOwner()) &&
-                               ((!fileOperations->getMySquare()[playerFour->getPlayerPosition()]->isMortgaged()))) {
-
-                        cost = fileOperations->getMySquare()[playerFour->getPlayerPosition()]->getPropertyRent();
-
-                        if (fileOperations->getMySquare()[playerFour->getPlayerPosition()]->getSquareType() == 1) {
-                            cost = fileOperations->calculateColorGroupCost(cost, playerFour->getPlayerPosition(), playerOne->getPlayerName());
-                            caseValue = 'B';
-                        } else if (fileOperations->getMySquare()[playerFour->getPlayerPosition()]->getSquareType() == 3) {
-                            caseValue = 'C';
-                        }
-
-                        playerFour->setPlayerMoney(playerFour->getPlayerMoney() - cost);
-
-
-                        playerOne->setPlayerMoney(playerOne->getPlayerMoney() + cost);
-
-                    } else if ((playerTwo->getPlayerName() ==
-                                fileOperations->getMySquare()[playerFour->getPlayerPosition()]->getPropertyOwner()) &&
-                               ((!fileOperations->getMySquare()[playerFour->getPlayerPosition()]->isMortgaged()))) {
-
-                        cost = fileOperations->getMySquare()[playerFour->getPlayerPosition()]->getPropertyRent();
-
-                        if (fileOperations->getMySquare()[playerFour->getPlayerPosition()]->getSquareType() == 1) {
-                            cost = fileOperations->calculateColorGroupCost(cost, playerFour->getPlayerPosition(), playerTwo->getPlayerName());
-                            caseValue = 'B';
-                        } else if (fileOperations->getMySquare()[playerFour->getPlayerPosition()]->getSquareType() == 3) {
-                            caseValue = 'C';
-                        }
-
-                        playerFour->setPlayerMoney(playerFour->getPlayerMoney() - cost);
-
-
-                        playerTwo->setPlayerMoney(playerTwo->getPlayerMoney() + cost);
-
-                    } else if ((playerThree->getPlayerName() ==
-                                fileOperations->getMySquare()[playerFour->getPlayerPosition()]->getPropertyOwner()) &&
-                               ((!fileOperations->getMySquare()[playerFour->getPlayerPosition()]->isMortgaged()))) {
-
-                        cost = fileOperations->getMySquare()[playerFour->getPlayerPosition()]->getPropertyRent();
-
-                        if (fileOperations->getMySquare()[playerFour->getPlayerPosition()]->getSquareType() == 1) {
-                            cost = fileOperations->calculateColorGroupCost(cost, playerFour->getPlayerPosition(), playerThree->getPlayerName());
-                            caseValue = 'B';
-                        } else if (fileOperations->getMySquare()[playerFour->getPlayerPosition()]->getSquareType() == 3) {
-                            caseValue = 'C';
-                        }
-
-                        playerFour->setPlayerMoney(playerFour->getPlayerMoney() - cost);
-
-
-                        playerThree->setPlayerMoney(playerThree->getPlayerMoney() + cost);
-
-                    }
-                }
-
+                propertyTransactions(playerFour,playerOne, playerTwo, playerThree, userInterface, fileOperations, squareName);
                 userInterface->displayPropertyTransactions(playerFour->getPlayerName(),squareName,cost,caseValue);
 
                 userInterface->displayPlayerAmount(playerFour->getPlayerName(),playerFour->getPlayerMoney());
 
-                ///working on
-                if (playerFour->getPlayerMoney() < 0) {
-                    for (int k = 0; k < fileOperations->getOrderedMySquare().size(); ++k) {
-                        if (fileOperations->getOrderedMySquare()[k]->getPropertyOwner() == playerFour->getPlayerName()) {
-                            if (!fileOperations->getOrderedMySquare()[k]->isMortgaged()) {
-                                fileOperations->getOrderedMySquare()[k]->setMortgaged(true);
-                                playerFour->addLentMoney(fileOperations->getOrderedMySquare()[k]->getPropertyCost());
-                                playerFour->setLentMoney(true);
-                                cout << playerFour->getPlayerName() << " has mortgaged " << fileOperations->getOrderedMySquare()[k]->getSquareName() << endl;
-                                cout << playerFour->getPlayerName() << " has " << playerFour->getPlayerMoney() << endl;
-                            }
-                        }
-                        if (playerFour->getPlayerMoney() >= 0) {
-                            break;
-                        }
-                    }
-
-                    if (playerFour->getPlayerMoney() < 0) {
-                        playerFour->setBankrupt(true);
-                    }
-                }
-
-
-                if (playerFour->isLentMoney()) {
-                    int count = 0;
-                    for (int k = 0; k < fileOperations->getOrderedMySquare().size(); ++k) {
-                        if (fileOperations->getOrderedMySquare()[k]->getPropertyOwner() == playerFour->getPlayerName() && fileOperations->getOrderedMySquare()[k]->isMortgaged()) {
-                            ++count;
-                            if (playerFour->getPlayerMoney() > fileOperations->getOrderedMySquare()[k]->getPropertyCost()) {
-                                fileOperations->getOrderedMySquare()[k]->setMortgaged(false);
-                                playerFour->repayMortgage(fileOperations->getOrderedMySquare()[k]->getPropertyCost());
-
-                                cout << "\n" << playerFour->getPlayerName() << " has repaid mortgaged for " << fileOperations->getOrderedMySquare()[k]->getSquareName() << endl;
-                                cout << playerFour->getPlayerName() << " has " << playerFour->getPlayerMoney() << endl;
-                            } else {
-                                break;
-                            }
-                        }
-                    }
-
-                    if (count == 0) {
-                        playerFour->setLentMoney(false);
-                    }
-                }
+                mortgageAndBanckruptancy(playerFour, userInterface, fileOperations);
 
                 userInterface->setChance("playerOne");
                 cout << "\n============== End of the Chance of the Player Four =================="  << endl;

@@ -27,6 +27,7 @@ private:
     vectorSquare mySquare;
     vectorSquare orderedMySquare;
     map<string, int> position;
+    int seedValue;
     static bool isNumber(const string& str);
     static vectorString getLine(string line);
 public:
@@ -40,6 +41,12 @@ public:
     const vectorSquare &getMySquare() const;
 
     void setMySquare(const vectorSquare &mySquare);
+
+    int getSeedValue() const;
+
+    void setSeedValue(int seedValue);
+
+    void readSeed(string fileName);
 
     const map<string, int> &getPosition() const;
 
