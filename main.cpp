@@ -20,6 +20,10 @@
 using namespace std;
 
 #define SQUARE_TYPE(mainPlayer) fileOperations->getMySquare()[mainPlayer->getPlayerPosition()]->getSquareType()
+#define PLAYER_POSITION(mainPlayer) mainPlayer->getPlayerPosition()
+#define SQUARE_NAME(mainPlayer) fileOperations->getMySquare()[mainPlayer->getPlayerPosition()]->getSquareName()
+#define RANDOM_NUMBER userInterface->getRandomNumber()
+
 
 
 string rightTrim(string word) {
@@ -30,12 +34,12 @@ void playTurn(unique_ptr<Player>& mainPlayer, unique_ptr<UserInterface>& userInt
     string squareName;
     userInterface->setRandomNumber(userInterface->rollDice());
 
-    if (25 >= (mainPlayer->getPlayerPosition() + userInterface->getRandomNumber())) {
-        mainPlayer->setPlayerPosition(mainPlayer->getPlayerPosition() + userInterface->getRandomNumber());
-        squareName = fileOperations->getMySquare()[mainPlayer->getPlayerPosition()]->getSquareName();
+    if (25 >= (PLAYER_POSITION(mainPlayer) + RANDOM_NUMBER)) {
+        mainPlayer->setPlayerPosition(PLAYER_POSITION(mainPlayer) + RANDOM_NUMBER);
+        squareName = SQUARE_NAME(mainPlayer);
         userInterface->setPassesGo(false);
-    } else if (25 < (mainPlayer->getPlayerPosition() + userInterface->getRandomNumber())) {
-        mainPlayer->setPlayerPosition((mainPlayer->getPlayerPosition() + userInterface->getRandomNumber()) - 25);
+    } else if (25 < (PLAYER_POSITION(mainPlayer)+ RANDOM_NUMBER)) {
+        mainPlayer->setPlayerPosition((PLAYER_POSITION(mainPlayer) + RANDOM_NUMBER) - 25);
         squareName = fileOperations->getMySquare()[mainPlayer->getPlayerPosition()]->getSquareName();
         mainPlayer->setPlayerMoney(mainPlayer->getPlayerMoney() + 200);
         userInterface->setPassesGo(true);
