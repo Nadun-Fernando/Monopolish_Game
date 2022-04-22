@@ -8,6 +8,7 @@
 using namespace std;
 
 int main() {
+    /*this code is to maximize the command line windows size but I didn't put it because it generates a handled leak*/
 //    HWND console = GetConsoleWindow();
 //    RECT ConsoleRect;
 //    GetWindowRect(console, &ConsoleRect);
