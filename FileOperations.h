@@ -22,8 +22,6 @@ class FileOperations {
 private:
     string fileName;
     ifstream myFile;
-    //CSquare* mySquare[26];
-//    vector<CSquare *> mySquare;
     vectorSquare mySquare;
     vectorSquare orderedMySquare;
     map<string, int> position;

@@ -514,6 +514,339 @@ CMakeFiles\CO2402Assignment.dir\JailSquare.cpp.obj: "D:\Programming Softwares\VS
 CMakeFiles\CO2402Assignment.dir\JailSquare.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\ucrt\ctype.h"
 
 
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: ..\Monopoly.cpp
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: ..\Monopoly.h
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\iostream"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\yvals_core.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\vcruntime.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\sal.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\concurrencysal.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\vadefs.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\xkeycheck.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\istream"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\ostream"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\ios"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\xlocnum"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\climits"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\limits.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\cmath"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\yvals.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\ucrt\crtdbg.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\vcruntime_new_debug.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\vcruntime_new.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\crtdefs.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\use_ansi.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\cstdlib"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\ucrt\math.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_math.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\ucrt\stdlib.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_malloc.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_search.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\ucrt\stddef.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_wstdlib.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\xtr1common"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\intrin0.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\intrin0.inl.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\cstdio"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\ucrt\stdio.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_wstdio.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_stdio_config.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\iterator"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\iosfwd"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\cstring"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\ucrt\string.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_memory.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_memcpy_s.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\ucrt\errno.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\vcruntime_string.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_wstring.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\cwchar"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\ucrt\wchar.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_wconio.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_wctype.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_wdirect.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_wio.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_share.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_wprocess.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_wtime.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\ucrt\sys\stat.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\ucrt\sys\types.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\xstddef"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\cstddef"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\initializer_list"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\xutility"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\utility"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\type_traits"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\cstdint"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\stdint.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\streambuf"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\xiosbase"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\ucrt\share.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\system_error"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\__msvc_system_error_abi.hpp"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\cerrno"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\stdexcept"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\exception"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\ucrt\malloc.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\vcruntime_exception.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\eh.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_terminate.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\xstring"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\xmemory"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\limits"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\cfloat"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\ucrt\float.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\isa_availability.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\new"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\xatomic.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\xcall_once.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\xerrc.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\atomic"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\xthreads.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\xtimec.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\ctime"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\ucrt\time.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\xlocale"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\memory"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\typeinfo"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\vcruntime_typeinfo.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\xfacet"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\xlocinfo"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\xlocinfo.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\cctype"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\ucrt\ctype.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\clocale"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\ucrt\locale.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\fstream"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\vector"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\string"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\algorithm"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\Windows.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\winapifamily.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\winpackagefamily.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\sdkddkver.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\excpt.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\stdarg.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\windef.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\minwindef.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\specstrings.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\specstrings_strict.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\specstrings_undef.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\driverspecs.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\sdv_driverspecs.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\winnt.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\kernelspecs.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\basetsd.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\guiddef.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\pshpack4.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\poppack.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\pshpack4.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\poppack.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\pshpack4.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\poppack.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\pshpack4.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\pshpack2.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\poppack.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\pshpack2.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\pshpack2.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\poppack.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\poppack.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\pshpack8.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\poppack.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\pshpack1.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\poppack.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\pshpack1.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\poppack.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\poppack.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\apiset.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\ktmtypes.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\winbase.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\apisetcconv.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\minwinbase.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\apiquery2.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\processenv.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\fileapifromapp.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\fileapi.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\debugapi.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\utilapiset.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\handleapi.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\errhandlingapi.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\fibersapi.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\namedpipeapi.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\profileapi.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\heapapi.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\ioapiset.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\synchapi.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\interlockedapi.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\processthreadsapi.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\sysinfoapi.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\memoryapi.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\enclaveapi.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\threadpoollegacyapiset.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\threadpoolapiset.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\jobapi.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\jobapi2.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\wow64apiset.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\libloaderapi.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\securitybaseapi.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\namespaceapi.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\systemtopologyapi.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\processtopologyapi.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\securityappcontainer.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\realtimeapiset.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\winerror.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\timezoneapi.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\wingdi.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\pshpack1.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\poppack.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\pshpack2.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\poppack.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\pshpack2.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\poppack.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\pshpack4.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\poppack.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\pshpack4.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\poppack.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\winuser.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\pshpack2.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\poppack.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\tvout.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\winnls.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\datetimeapi.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\stringapiset.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\winnls.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\wincon.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\wincontypes.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\consoleapi.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\consoleapi2.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\consoleapi3.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\winver.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\verrsrc.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\winreg.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\reason.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\winnetwk.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\wnnc.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\cderr.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\dde.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\ddeml.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\dlgs.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\lzexpand.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\mmsystem.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\mmsyscom.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\pshpack1.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\poppack.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\pshpack1.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\mciapi.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\mmsyscom.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\mmiscapi.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\mmsyscom.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\mmiscapi2.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\mmsyscom.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\playsoundapi.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\mmsyscom.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\mmeapi.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\mmsyscom.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\timeapi.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\mmsyscom.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\joystickapi.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\mmsyscom.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\poppack.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\nb30.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\rpc.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\rpcdce.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\rpcdcep.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\rpcnsi.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\rpcnterr.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\rpcasync.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\shellapi.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\pshpack1.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\poppack.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\winperf.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\pshpack8.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\poppack.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\winsock.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\inaddr.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\wincrypt.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\bcrypt.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\ncrypt.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\dpapi.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\winefs.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\winscard.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\wtypes.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\rpcndr.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\pshpack8.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\rpcnsip.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\rpcsal.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\poppack.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\wtypesbase.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\guiddef.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\winioctl.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\pshpack1.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\poppack.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\pshpack1.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\poppack.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\pshpack1.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\poppack.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\pshpack1.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\poppack.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\pshpack1.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\poppack.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\pshpack1.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\poppack.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\pshpack1.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\poppack.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\winsmcrd.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\winspool.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\prsht.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\pshpack4.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\poppack.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\ole2.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\pshpack8.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\objbase.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\pshpack8.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\combaseapi.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\pshpack8.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\unknwnbase.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\objidlbase.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\guiddef.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\cguid.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\poppack.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\coml2api.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\objidl.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\unknwn.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\propidlbase.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\oaidl.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\urlmon.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\oleidl.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\servprov.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\msxml.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\propidl.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\poppack.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\oleauto.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\pshpack8.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\poppack.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\poppack.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\commdlg.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\prsht.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\pshpack1.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\poppack.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\shared\stralign.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\winsvc.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\mcx.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\imm.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\um\ime_cmodes.h"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: ..\FileOperations.h
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\map"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\tuple"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\xtree"
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: ..\CSquare.h
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: ..\Properties.h
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: ..\Station.h
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: ..\UserInterface.h
+CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj: ..\Player.h
+
+
 CMakeFiles\CO2402Assignment.dir\PenaltySquare.cpp.obj: ..\PenaltySquare.cpp
 CMakeFiles\CO2402Assignment.dir\PenaltySquare.cpp.obj: ..\PenaltySquare.h
 CMakeFiles\CO2402Assignment.dir\PenaltySquare.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\map"
@@ -1262,6 +1595,7 @@ CMakeFiles\CO2402Assignment.dir\main.cpp.obj: "D:\Programming Softwares\VS\VC\To
 CMakeFiles\CO2402Assignment.dir\main.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\ucrt\ctype.h"
 CMakeFiles\CO2402Assignment.dir\main.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\clocale"
 CMakeFiles\CO2402Assignment.dir\main.cpp.obj: "D:\Windows Kits\10\include\10.0.19041.0\ucrt\locale.h"
+CMakeFiles\CO2402Assignment.dir\main.cpp.obj: ..\Monopoly.h
 CMakeFiles\CO2402Assignment.dir\main.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\fstream"
 CMakeFiles\CO2402Assignment.dir\main.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\vector"
 CMakeFiles\CO2402Assignment.dir\main.cpp.obj: "D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\string"
@@ -1808,29 +2142,13 @@ CMakeFiles\CO2402Assignment.dir\main.cpp.obj: ..\Player.h
 
 ..\JailSquare.cpp:
 
-..\PenaltySquare.cpp:
+..\Monopoly.cpp:
 
-..\Player.cpp:
+..\Monopoly.h:
 
-..\Player.h:
+"D:\Windows Kits\10\include\10.0.19041.0\um\rpcnsip.h":
 
-"D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\xloctime":
-
-..\Properties.cpp:
-
-"D:\Windows Kits\10\include\10.0.19041.0\um\joystickapi.h":
-
-"D:\Windows Kits\10\include\10.0.19041.0\um\dlgs.h":
-
-..\Station.cpp:
-
-..\UserInterface.h:
-
-..\colors.h:
-
-"D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\list":
-
-"D:\Windows Kits\10\include\10.0.19041.0\um\windows.h":
+"D:\Windows Kits\10\include\10.0.19041.0\um\Windows.h":
 
 "D:\Windows Kits\10\include\10.0.19041.0\shared\winapifamily.h":
 
@@ -1974,6 +2292,12 @@ CMakeFiles\CO2402Assignment.dir\main.cpp.obj: ..\Player.h
 
 "D:\Windows Kits\10\include\10.0.19041.0\um\ddeml.h":
 
+..\Station.cpp:
+
+"D:\Windows Kits\10\include\10.0.19041.0\um\joystickapi.h":
+
+"D:\Windows Kits\10\include\10.0.19041.0\um\dlgs.h":
+
 "D:\Windows Kits\10\include\10.0.19041.0\um\lzexpand.h":
 
 "D:\Windows Kits\10\include\10.0.19041.0\um\mmsyscom.h":
@@ -2008,10 +2332,6 @@ CMakeFiles\CO2402Assignment.dir\main.cpp.obj: ..\Player.h
 
 "D:\Windows Kits\10\include\10.0.19041.0\shared\rpcndr.h":
 
-"D:\Windows Kits\10\include\10.0.19041.0\um\Windows.h":
-
-"D:\Windows Kits\10\include\10.0.19041.0\um\rpcnsip.h":
-
 "D:\Windows Kits\10\include\10.0.19041.0\shared\wtypesbase.h":
 
 "D:\Windows Kits\10\include\10.0.19041.0\um\winioctl.h":
@@ -2045,5 +2365,23 @@ CMakeFiles\CO2402Assignment.dir\main.cpp.obj: ..\Player.h
 "D:\Windows Kits\10\include\10.0.19041.0\um\imm.h":
 
 "D:\Windows Kits\10\include\10.0.19041.0\um\ime_cmodes.h":
+
+..\UserInterface.h:
+
+..\Player.h:
+
+..\PenaltySquare.cpp:
+
+..\Player.cpp:
+
+"D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\xloctime":
+
+..\Properties.cpp:
+
+..\colors.h:
+
+"D:\Programming Softwares\VS\VC\Tools\MSVC\14.29.30133\include\list":
+
+"D:\Windows Kits\10\include\10.0.19041.0\um\windows.h":
 
 ..\main.cpp:

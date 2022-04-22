@@ -14,6 +14,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/FreeParking.cpp" "CMakeFiles/CO2402Assignment.dir/FreeParking.cpp.obj" "msvc" "CMakeFiles/CO2402Assignment.dir/FreeParking.cpp.obj.d"
   "D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/GotoJailSquare.cpp" "CMakeFiles/CO2402Assignment.dir/GotoJailSquare.cpp.obj" "msvc" "CMakeFiles/CO2402Assignment.dir/GotoJailSquare.cpp.obj.d"
   "D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/JailSquare.cpp" "CMakeFiles/CO2402Assignment.dir/JailSquare.cpp.obj" "msvc" "CMakeFiles/CO2402Assignment.dir/JailSquare.cpp.obj.d"
+  "D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/Monopoly.cpp" "CMakeFiles/CO2402Assignment.dir/Monopoly.cpp.obj" "msvc" "CMakeFiles/CO2402Assignment.dir/Monopoly.cpp.obj.d"
   "D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/PenaltySquare.cpp" "CMakeFiles/CO2402Assignment.dir/PenaltySquare.cpp.obj" "msvc" "CMakeFiles/CO2402Assignment.dir/PenaltySquare.cpp.obj.d"
   "D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/Player.cpp" "CMakeFiles/CO2402Assignment.dir/Player.cpp.obj" "msvc" "CMakeFiles/CO2402Assignment.dir/Player.cpp.obj.d"
   "D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/Properties.cpp" "CMakeFiles/CO2402Assignment.dir/Properties.cpp.obj" "msvc" "CMakeFiles/CO2402Assignment.dir/Properties.cpp.obj.d"

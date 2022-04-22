@@ -11,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/CO2402Assignment.dir/GotoJailSquare.cpp.obj.d"
   "CMakeFiles/CO2402Assignment.dir/JailSquare.cpp.obj"
   "CMakeFiles/CO2402Assignment.dir/JailSquare.cpp.obj.d"
+  "CMakeFiles/CO2402Assignment.dir/Monopoly.cpp.obj"
+  "CMakeFiles/CO2402Assignment.dir/Monopoly.cpp.obj.d"
   "CMakeFiles/CO2402Assignment.dir/PenaltySquare.cpp.obj"
   "CMakeFiles/CO2402Assignment.dir/PenaltySquare.cpp.obj.d"
   "CMakeFiles/CO2402Assignment.dir/Player.cpp.obj"

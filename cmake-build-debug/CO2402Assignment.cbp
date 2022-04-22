@@ -120,6 +120,12 @@
 		<Unit filename="D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/JailSquare.h">
 			<Option target="CO2402Assignment"/>
 		</Unit>
+		<Unit filename="D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/Monopoly.cpp">
+			<Option target="CO2402Assignment"/>
+		</Unit>
+		<Unit filename="D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/Monopoly.h">
+			<Option target="CO2402Assignment"/>
+		</Unit>
 		<Unit filename="D:/CO2402 Advanced Programming/Assignment/CO2402Assignment/PenaltySquare.cpp">
 			<Option target="CO2402Assignment"/>
 		</Unit>

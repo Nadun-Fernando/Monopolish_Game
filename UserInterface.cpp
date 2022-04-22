@@ -21,7 +21,6 @@ int UserInterface::rollDice() {
 }
 
 void UserInterface::intro() {
-    system("cls");
     printf("\n\n");
     printf("\n                                   888       888 8888888888 888      .d8888b.   .d88888b.  888b     d888 8888888888      88888888888 .d88888b.       ");
     printf("\n                                   888   o   888 888        888     d88P  Y88b d88P\" \"Y88b 8888b   d8888 888                 888    d88P\" \"Y88b  ");
@@ -44,7 +43,6 @@ void UserInterface::intro() {
 }
 
 void UserInterface::displayBoard() {
-    system("cls");
     cout << ("\n");
     cout << ("\n                BROWN BROWN  RAILWAY ORANGE ORANGE ORANGE   FREE         ");
     cout << ("\n                  RD  STREET STATION   RD   STREET   WAY    PARK         ");
@@ -174,7 +172,6 @@ void UserInterface::displayMove(int randomNumber, const string& playerName, cons
 }
 
 void UserInterface::thankYou() {
-    system("cls");
     printf("\n\n");
     printf("\n                              88888888888 888    888        d8888 888b    888 888    d8P   .d8888b.       8888888888 .d88888b.  8888888b.  ");
     printf("\n                                  888     888    888       d88888 8888b   888 888   d8P   d88P  Y88b      888       d88P\" \"Y88b 888   Y88b ");

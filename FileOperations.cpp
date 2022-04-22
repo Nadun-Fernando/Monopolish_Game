@@ -34,20 +34,11 @@ vectorString FileOperations::getLine(string line) {
     bool isString = false;
     string temp;
 
-//    char * tokens;
-//    char * next_token;
-//    const char * delim = " ";
-//    char * line_chararr = const_cast< char *>(line.c_str());
-//    tokens = strtok(line_chararr,delim);//line_chararr, " ",next_token);
-
     char * delim = new char[strlen(" ") +1];
     strcpy(delim, " ");
 
     char * line_chararr = new char[strlen(line.c_str())+1];
     strcpy(line_chararr, const_cast< char *>(line.c_str()));
-
-//    char * tokens = new char[strlen(line_chararr) +1 ];
-//    strcpy(tokens, strtok(line_chararr,delim));
 
     char * tokens = strtok(line_chararr,delim);
 
@@ -140,13 +131,6 @@ void FileOperations::setPosition(const map<string, int> &position) {
 }
 
 int FileOperations::findPosition(string squareName) {
-//    map<string, int> :: iterator it;
-//
-//    for (it = position.begin(); it != position.end(); it++) {
-//        if (it->first == squareName) {
-//            return it->second;
-//        }
-//    }
     for (const auto& it: position) {
         if (it.first == squareName) {
             return it.second;

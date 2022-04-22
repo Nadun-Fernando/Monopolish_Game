@@ -262,6 +262,30 @@ JailSquare.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CO2402Assignment.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CO2402Assignment.dir\JailSquare.cpp.s
 .PHONY : JailSquare.cpp.s
 
+Monopoly.obj: Monopoly.cpp.obj
+.PHONY : Monopoly.obj
+
+# target to build an object file
+Monopoly.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CO2402Assignment.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.obj
+.PHONY : Monopoly.cpp.obj
+
+Monopoly.i: Monopoly.cpp.i
+.PHONY : Monopoly.i
+
+# target to preprocess a source file
+Monopoly.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CO2402Assignment.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.i
+.PHONY : Monopoly.cpp.i
+
+Monopoly.s: Monopoly.cpp.s
+.PHONY : Monopoly.s
+
+# target to generate assembly for a file
+Monopoly.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CO2402Assignment.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CO2402Assignment.dir\Monopoly.cpp.s
+.PHONY : Monopoly.cpp.s
+
 PenaltySquare.obj: PenaltySquare.cpp.obj
 .PHONY : PenaltySquare.obj
 
@@ -433,6 +457,9 @@ help:
 	@echo ... JailSquare.obj
 	@echo ... JailSquare.i
 	@echo ... JailSquare.s
+	@echo ... Monopoly.obj
+	@echo ... Monopoly.i
+	@echo ... Monopoly.s
 	@echo ... PenaltySquare.obj
 	@echo ... PenaltySquare.i
 	@echo ... PenaltySquare.s
