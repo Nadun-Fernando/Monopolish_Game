@@ -57,7 +57,7 @@ void Monopoly::playTurn(unique_ptr<Player> &mainPlayer, unique_ptr<UserInterface
     userInterface->displayMove(userInterface->getRandomNumber(),mainPlayer->getPlayerName(),rightTrim(squareName),userInterface->isPassesGo(),userInterface->isBonus(),userInterface->isPenalty(),userInterface->getRollBonusPenalty());
 
     if (rightTrim(squareName) == "Go to Jail") {
-        mainPlayer->setPlayerMoney(CURRENT_BALANCE(mainPlayer) - fileOperations->getMySquare()[mainPlayer->getPlayerPosition()]->getPropertyCost());
+        mainPlayer->setPlayerMoney(CURRENT_BALANCE(mainPlayer) - PROPERTY_COST(mainPlayer));
         mainPlayer->setPlayerPosition(fileOperations->findPosition("Jail "));
 
     }
@@ -287,14 +287,30 @@ void Monopoly::playGame() {
 
 
 
-    if ((playerOne->getPlayerMoney() < playerTwo->getPlayerMoney()) && (playerThree->getPlayerMoney() < playerTwo->getPlayerMoney()) && (playerFour->getPlayerMoney() < playerTwo->getPlayerMoney())) {
+    if ((playerOne->getPlayerMoney() < playerTwo->getPlayerMoney())
+        && (playerThree->getPlayerMoney() < playerTwo->getPlayerMoney())
+        && (playerFour->getPlayerMoney() < playerTwo->getPlayerMoney())) {
+
         userInterface->displayEndResult(playerTwo->getPlayerName(),playerTwo->getPlayerMoney(),playerOne->getPlayerName(),playerOne->getPlayerMoney(), playerThree->getPlayerName(), playerThree->getPlayerMoney(), playerFour->getPlayerName(), playerFour->getPlayerMoney());
-    } else if ((playerOne->getPlayerMoney() > playerTwo->getPlayerMoney()) && (playerOne->getPlayerMoney() > playerThree->getPlayerMoney()) && (playerOne->getPlayerMoney() > playerFour->getPlayerMoney())) {
+
+    } else if ((playerOne->getPlayerMoney() > playerTwo->getPlayerMoney())
+                && (playerOne->getPlayerMoney() > playerThree->getPlayerMoney())
+                && (playerOne->getPlayerMoney() > playerFour->getPlayerMoney())) {
+
         userInterface->displayEndResult(playerOne->getPlayerName(),playerOne->getPlayerMoney(),playerTwo->getPlayerName(),playerTwo->getPlayerMoney(),playerThree->getPlayerName(), playerThree->getPlayerMoney(), playerFour->getPlayerName(), playerFour->getPlayerMoney());
-    } else if ((playerThree->getPlayerMoney() > playerOne->getPlayerMoney()) && (playerThree->getPlayerMoney() > playerTwo->getPlayerMoney()) && (playerThree->getPlayerMoney() > playerFour->getPlayerMoney())) {
+
+    } else if ((playerThree->getPlayerMoney() > playerOne->getPlayerMoney())
+                && (playerThree->getPlayerMoney() > playerTwo->getPlayerMoney())
+                && (playerThree->getPlayerMoney() > playerFour->getPlayerMoney())) {
+
         userInterface->displayEndResult(playerThree->getPlayerName(),playerThree->getPlayerMoney(),playerTwo->getPlayerName(),playerTwo->getPlayerMoney(),playerOne->getPlayerName(), playerOne->getPlayerMoney(), playerFour->getPlayerName(), playerFour->getPlayerMoney());
-    } else if ((playerFour->getPlayerMoney() > playerOne->getPlayerMoney()) && (playerFour->getPlayerMoney() > playerTwo->getPlayerMoney()) && (playerFour->getPlayerMoney() > playerThree->getPlayerMoney())) {
+
+    } else if ((playerFour->getPlayerMoney() > playerOne->getPlayerMoney())
+                && (playerFour->getPlayerMoney() > playerTwo->getPlayerMoney())
+                && (playerFour->getPlayerMoney() > playerThree->getPlayerMoney())) {
+
         userInterface->displayEndResult(playerFour->getPlayerName(),playerFour->getPlayerMoney(),playerTwo->getPlayerName(),playerTwo->getPlayerMoney(),playerThree->getPlayerName(), playerThree->getPlayerMoney(), playerOne->getPlayerName(), playerOne->getPlayerMoney());
+
     }
     else {
         cout << "ERROR!!!!" << endl;
