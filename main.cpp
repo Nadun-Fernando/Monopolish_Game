@@ -15,8 +15,6 @@ int main() {
 //
 //    MoveWindow(console, ConsoleRect.left, ConsoleRect.top, 1980, 1080, TRUE);
 
-//    UserInterface ui;
-//    ui.displayBoard();
     unique_ptr<Monopoly> monopoly(make_unique<Monopoly>());
     monopoly->playGame();
 
